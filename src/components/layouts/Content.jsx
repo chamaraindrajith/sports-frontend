@@ -11,16 +11,20 @@ function Content(props) {
   const location = useLocation();
   useEffect(() => {
     console.log("Location changed");
-    getStages();
+
+    let today = new Date().toISOString().slice(0, 10)
+    getStages(today);
+
   }, [location]);
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
-  function getStages() {
+  function getStages(date) {
     // https://reactjs.org/docs/faq-ajax.html
-    var url = "https://sports.pfplapp.com/backend/public/api/get/" + props.sport + "/date/20220727/json";
+    var url = "https://sports.pfplapp.com/backend/public/api/get/" + props.sport + "/date/" + date + "/json";
+    // var url = "http://127.0.0.1/sports/laravel/sports/backend/public/api/get/cricket/date/2022-07-27/json";
     fetch(url)
       .then((res) => res.json())
       .then(

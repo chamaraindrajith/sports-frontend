@@ -28,7 +28,6 @@ function StageCard(props) {
           </div>
           <AiFillCaretRight style={{ fontSize: "25px" }} />
         </div>
-        {/* <GameCard sport={props.sport} /> */}
         {props.stage.games.map((game) => (
             <GameCard sport={props.sport} game={game} />
           ))}

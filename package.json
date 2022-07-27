@@ -1,5 +1,6 @@
 {
   "name": "sports",
+  "homepage": "https://sports.pfplapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +16,7 @@
     "react-dimmer": "^1.0.7",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

@@ -1,13 +1,13 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 
 import logo from "./logo.svg";
 import "./css/App.css";
 import "./css/MenuItems.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Score from "./components/Score";
+import Home from "./components/Home";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,14 +22,20 @@ function App() {
         <BrowserRouter>
           <CssBaseline />
           <Header />
-
-          <Routes>
-            <Route path="/soccer" element={<Score sport="soccer" />} />
-            <Route path="/basketball" element={<Score sport="basketball" />} />
-            <Route path="/cricket" element={<Score sport="cricket" />} />
-            <Route path="/" element={<Score sport="soccer" />} />
-          </Routes>
-
+          <Switch>
+            <Route path="/soccer">
+              <Home sport="soccer" />
+            </Route>
+            <Route path="/cricket">
+              <Home sport="cricket" />
+            </Route>
+            <Route path="/basketball">
+              <Home sport="basketball" />
+            </Route>
+            <Route path="/">
+              <Home sport="cricket" />
+            </Route>
+          </Switch>
           <Footer />
         </BrowserRouter>
       </ThemeProvider>
