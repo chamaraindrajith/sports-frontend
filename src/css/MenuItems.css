@@ -1,0 +1,16 @@
+.flags {
+  width: 20px;
+  min-width: 20px;
+  height: 100%;
+}
+.Fh {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.menuItemName {
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

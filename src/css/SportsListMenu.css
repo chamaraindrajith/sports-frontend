@@ -1,0 +1,13 @@
+#sport_chips .chip {
+  background: #181818;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+#sport_chips .active {
+  color: #111;
+  background: #fdfdfd;
+}
+.active span {
+  color: #111 !important;
+}

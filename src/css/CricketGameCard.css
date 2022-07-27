@@ -1,0 +1,32 @@
+.match_row_cricket_phase {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+}
+.match_row_live_time span {
+  font-size: 9px;
+  color: #ff6b00;
+}
+.ball_bat {
+  width: 14px;
+  margin-right: 8px;
+}
+.cricketGameCard .cricket_details {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  margin-left: 2px;
+  flex-direction: column;
+}
+.cricketGameCard .cricket_score {
+  font-weight: 700;
+  color: #fdfdfd;
+}
+.name_with_score {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0px 2px 0px;
+}
+.cricket_details {
+    margin-right: 10px;
+}

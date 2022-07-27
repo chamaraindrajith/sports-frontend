@@ -1,0 +1,25 @@
+.stage_card_stage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__stage {
+  display: flex;
+  width: 100%;
+  font-size: 11px;
+  font-weight: 700;
+}
+.header__stage__headers {
+  display: flex;
+  flex-direction: column;
+}
+.category-header__stage {
+  color: #fdfdfd;
+  font-weight: 700;
+  font-size: 14px;
+}
+.category-header__category {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 500;
+}

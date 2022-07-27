@@ -1,0 +1,22 @@
+#match-rows_calendar {
+    display: flex;
+    justify-content: space-between;
+}
+#dates {
+    display: flex;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 700;
+    justify-content: space-evenly;
+}
+
+#dates .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#dates .date_number {
+    font-size: 9px;
+}

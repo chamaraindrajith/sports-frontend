@@ -1,0 +1,15 @@
+.team_names {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  margin-left: 12px;
+  flex-direction: column;
+}
+.team_img {
+  width: 20px;
+  margin-right: 8px;
+}
+.match_row {
+  text-align: center;
+  margin-right: 8px;
+}
