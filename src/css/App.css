@@ -5,7 +5,8 @@
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1300px;
+    /* max-width: 1300px; */
+    max-width: 1124px;
   }
 }
 
@@ -14,7 +15,8 @@
     padding: 0px !important;
     border: 0px !important;
   }
-  #menuItemNameDiv , #newsDiv {
+  #menuItemNameDiv,
+  #newsDiv {
     display: none;
   }
   .header {
@@ -22,10 +24,28 @@
   }
 }
 
+.row {
+  justify-content: center;
+}
+
+.col {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
 .flex-column {
   border: 1px solid #222;
   border-radius: 8px;
-  padding: 15px 15px 0;
+  padding: 0px 15px 0px;
+}
+
+@media (min-width: 768px) {
+  #newsDiv {
+    max-width: 30%;
+  }
+  #menuItemNameDiv {
+    max-width: 20%;
+  }
 }
 
 /**/
@@ -57,4 +77,12 @@
   width: 20px;
   min-width: 20px;
   height: 100%;
+}
+
+.no_games_message {
+  padding: 10px 15px;
+  margin: 15px 0px 15px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  text-align: center;
 }

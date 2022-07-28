@@ -1,15 +1,11 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 import Box from "@mui/material/Box";
 import { AiFillCaretRight } from "react-icons/ai";
 import "./../../../css/NewsSideBar.css";
 import NewsCards from "./NewsCards";
-import { useLocation } from "react-router-dom";
 
-
-
-
-
-function NewsSideBar(props) {    
+function NewsSideBar(props) {
+  const sport_name = props.sport.charAt(0).toUpperCase() + props.sport.slice(1); // capitalize first letter
 
   return (
     <div className="stage_card">
@@ -17,18 +13,13 @@ function NewsSideBar(props) {
         <div className="stage_card_stage">
           <div class="header__stage">
             <div className="header__stage__headers">
-              <span className="sidebar_sport_news_header">{props.sport} News</span>
+              <span className="sidebar_sport_news_header">{sport_name} News</span>
             </div>
           </div>
           <AiFillCaretRight style={{ fontSize: "25px" }} />
         </div>
-        {/* {props.stage.games.map((game) => (
-            <NewsCard sport={props.sport} game={game} />
-          ))} */}
-          <div>test</div>
-          <NewsCards/>
+        <NewsCards sport={props.sport} />
       </Box>
-
     </div>
   );
 }

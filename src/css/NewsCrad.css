@@ -1,0 +1,34 @@
+.news_card_box {
+    max-width: 290px;
+    height: 165px;
+    margin-bottom: 8px;
+    position: relative;
+}
+.news_card_background {
+    position: absolute;
+    position: absolute;
+    width: -webkit-fill-available;
+    background: linear-gradient(0deg,#181818,hsla(0,0%,9%,0));
+    height: -webkit-fill-available;
+    left: 0;
+    border-radius: 4px;
+}
+.news_card_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.news_card_parent {
+    height: 100%;
+}
+.news_card_title {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+    font-size: bold;
+}
