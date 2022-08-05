@@ -46,7 +46,7 @@ function StageCards(props) {
   if (error) {
     return (
       <div style={{ height: "800px" }}>
-        <div className="no_games_message">There are no games available</div>
+        <div className="box_message">There are no games available</div>
       </div>
     );
   } else if (!isLoaded) {

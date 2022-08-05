@@ -20,7 +20,7 @@ function NewsCards(props) {
   const [items, setItems] = useState([]);
 
   function getNews(date) {
-    var url = "https://sports.pfplapp.com/backend/public/api/get/news/cricket/date/" + date + "/json";
+    var url = "https://sports.pfplapp.com/backend/public/api/get/news/" + props.sport + "/date/" + date + "/json";
     fetch(url)
       .then((res) => res.json())
       .then(
@@ -39,7 +39,7 @@ function NewsCards(props) {
   if (error) {
     return (
       <div style={{ height: "800px" }}>
-        <div className="no_games_message">There are no news available</div>
+        <div className="box_message">There are no news available</div>
       </div>
     );
   } else if (!isLoaded) {

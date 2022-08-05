@@ -3,10 +3,9 @@ import Box from "@mui/material/Box";
 import { AiFillCaretRight } from "react-icons/ai";
 import "./../../css/StageCard.css";
 import GameCard from "./GameCard";
-
+import { Link } from "react-router-dom";
 
 function StageCard(props) {
-
   return (
     <div className="stage_card">
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
@@ -29,10 +28,13 @@ function StageCard(props) {
           <AiFillCaretRight style={{ fontSize: "25px" }} />
         </div>
         {props.stage.games.map((game) => (
-            <GameCard sport={props.sport} game={game} />
-          ))}
+          <div>
+            <Link to={'/' + props.sport + '/' + props.stage.category_slug + '/' + props.stage.slug + '/' + game.game_id + '/' + game.game_id} className="sport_chips_links" style={{ textDecoration: "none" }}>
+              <GameCard sport={props.sport} game={game} category_slug={props.stage} />
+            </Link>
+          </div>
+        ))}
       </Box>
-
     </div>
   );
 }

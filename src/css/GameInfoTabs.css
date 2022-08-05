@@ -1,0 +1,16 @@
+a.game_info_tab {
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+}
+a.game_info_tab:hover {
+    color: #fdfdfd;
+}
+#game_info_tabs .active {
+  color: #f06b00;
+}
+.active span {
+  color: #111 !important;
+}

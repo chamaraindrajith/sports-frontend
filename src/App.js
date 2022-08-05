@@ -2,7 +2,6 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 
-import logo from "./logo.svg";
 import "./css/App.css";
 import "./css/MenuItems.css";
 import Header from "./components/Header";
@@ -23,17 +22,14 @@ function App() {
           <CssBaseline />
           <Header />
           <Switch>
-            <Route path="/soccer">
-              <Home sport="soccer" />
+            <Route path="/:sport/:category/:subcategory/:game_name/:game_id/:tab">
+              <Home />
             </Route>
-            <Route path="/cricket">
-              <Home sport="cricket" />
+            <Route path="/:sport/:category/:subcategory/:game_name/:game_id">
+              <Home />
             </Route>
-            <Route path="/basketball">
-              <Home sport="basketball" />
-            </Route>
-            <Route path="/">
-              <Home sport="cricket" />
+            <Route path="/:sport">
+              <Home />
             </Route>
           </Switch>
           <Footer />

@@ -14,11 +14,11 @@ function SportsListMenu(props) {
   var basketball_class = '';
 
   if (props.sport == "cricket") {
-    var cricket_class = "active";
+    cricket_class = "active";
   } else if (props.sport == "soccer") {
-    var soccer_class = "active";
+    soccer_class = "active";
   } else if (props.sport == "basketball") {
-    var basketball_class = "active";
+    basketball_class = "active";
   }
 
   return (

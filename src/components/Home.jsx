@@ -2,8 +2,10 @@ import React from "react";
 import MenuItems from "./layouts/MenuItems";
 import Content from "./layouts/Content";
 import NewsSideBar from "./layouts/news/NewsSideBar";
+import { useParams } from "react-router-dom";
 
-function Home(props) {
+function Home() {
+  const { sport } = useParams();
   return (
     <div className="container">
       <div className="row">
@@ -14,12 +16,12 @@ function Home(props) {
         </div>
         <div className="col-md-6 col" id="contentDiv">
           <div className="container-left d-flex flex-column">
-            <Content sport={props.sport} />
+            <Content sport={sport} />
           </div>
         </div>
         <div className="col-md-4 col" id="newsDiv">
           <div className="container-left d-flex flex-column">
-            <NewsSideBar sport={props.sport} />
+            <NewsSideBar sport={sport} />
           </div>
         </div>
       </div>
