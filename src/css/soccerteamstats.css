@@ -1,0 +1,9 @@
+tbody tr td, tbody tr th{
+    font-size: 18px;
+    text-align: center;
+}
+
+thead tr th
+{
+    text-align: center;
+}
