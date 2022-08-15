@@ -1,4 +1,8 @@
-let button = document.querySelectorAll('.btn');
+let button = document.querySelectorAll('.btn-outline-info');
+if (button.length == 0) {
+  let button = document.querySelectorAll('.btn');
+}
+
 let content_inside = document.querySelectorAll('.team-card-container');
 
 Array.from(button).forEach(function(buttonArray, i) {
