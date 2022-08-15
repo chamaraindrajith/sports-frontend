@@ -19,7 +19,7 @@ function BasketBallGameCard(props) {
           <img src="https://lsm-static-prod.livescore.com/medium/enet/7797.png" className="team_img" />
           {props.game.t2[0].name}
         </span>
-      </div
+      </div>
       <div className="match_row" style={{ display: "flex", flexDirection: "column" }}>
         <span>{props.game.score[0].Tr1}</span>
         <span>{props.game.score[0].Tr2}</span>
