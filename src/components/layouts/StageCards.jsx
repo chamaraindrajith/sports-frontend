@@ -32,7 +32,7 @@ function StageCards(props) {
       .then(
         (result) => {
           setTimeout(() => {
-            console.log(result.stages);
+            // console.log(result.stages);
             setItems(result.stages);
             setIsLoaded(true);
           }, 1000);

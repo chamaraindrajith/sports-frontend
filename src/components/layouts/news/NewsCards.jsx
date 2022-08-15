@@ -25,7 +25,7 @@ function NewsCards(props) {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result);
+          // console.log(result);
           setItems(result);
           setIsLoaded(true);
         },
