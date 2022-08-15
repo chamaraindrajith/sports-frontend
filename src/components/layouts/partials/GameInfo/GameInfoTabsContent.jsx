@@ -27,7 +27,7 @@ function GameInfoTabs(props) {
   } else if (props.tab == "teams") {
     return <GameInfoTabsTeams />;
   } else {
-    return <GameInfoTabsInfo />;
+    return <GameInfoTabsScoreCard sport={props.sport} />;
   }
 }
 

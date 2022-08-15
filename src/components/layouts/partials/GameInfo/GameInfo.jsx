@@ -9,7 +9,7 @@ function GameInfo(props) {
 
   return (
     <div>
-      <GameInfoGameCard sport={props.sport} />
+      {/* <GameInfoGameCard sport={props.sport} /> */}
       <GameInfoTabs sport={props.sport} />
       <GameInfoTabsContent sport={props.sport} tab={tab} />
     </div>

@@ -33,7 +33,7 @@ function GameInfoTabs(props) {
   } else if (tab == "teams") {
     teams_class = "active";
   } else {
-    info_class = "active";
+    scorecard_class = "active";
   }
 
   var tab_url = "/" + props.sport + "/" + category + "/" + subcategory + "/" + game_name + "/" + game_id;
