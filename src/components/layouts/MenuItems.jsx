@@ -7,37 +7,37 @@ function MenuItems() {
         <div className="ej">
           <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/england.jpg" alt="" />
         </div>
-        <span className="menuItemName">Englandd fgd fgdfg </span>
+        <span className="menuItemName">England </span>
       </li>
       <li class="Fh">
         <div className="ej">
-          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/england.jpg" alt="" />
+          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/spain.jpg" alt="" />
         </div>
-        <span className="menuItemName">England</span>
+        <span className="menuItemName">Spain</span>
       </li>
       <li class="Fh">
         <div className="ej">
-          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/england.jpg" alt="" />
+          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/italy.jpg" alt="" />
         </div>
-        <span className="menuItemName">England</span>
+        <span className="menuItemName">Italy</span>
       </li>
       <li class="Fh">
         <div className="ej">
-          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/england.jpg" alt="" />
+          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/germany.jpg" alt="" />
         </div>
-        <span className="menuItemName">Englandd fgd fgdfg </span>
+        <span className="menuItemName">Germany</span>
       </li>
       <li class="Fh">
         <div className="ej">
-          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/england.jpg" alt="" />
+          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/france.jpg" alt="" />
         </div>
-        <span className="menuItemName">England</span>
+        <span className="menuItemName">France</span>
       </li>
       <li class="Fh">
         <div className="ej">
-          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/england.jpg" alt="" />
+          <img loading="lazy" className="flags" src="https://static.livescore.com/i2/fh/netherlands.jpg" alt="" />
         </div>
-        <span className="menuItemName">England</span>
+        <span className="menuItemName">Netherlands</span>
       </li>
     </ul>
   );
