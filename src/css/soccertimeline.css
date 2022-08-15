@@ -1,0 +1,75 @@
+.event-info-container
+{
+    height: fit-content;
+    background-color: #141414c5;
+    margin: 10px 25px;
+    border-radius: 10px;
+}
+
+.event-info
+{
+    margin:10px 0px;
+}
+
+.event-name-container
+{
+    height: 30%;
+    
+}
+
+#give-card .event-name-container .event-name, #substitution .event-name-container .event-name
+{
+    width: 70%;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.event-name-container .event-icon
+{
+    width: 10%;
+    
+    
+}
+
+.event-name-container .event-icon img
+{
+    width: 32px;
+    height: 32px;
+    
+}
+#give-card .event-name-container .event-time, #substitution .event-name-container .event-time
+{
+    width: 20%;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+
+.event-bottom-border
+{
+    border-bottom: 1.5px solid white;
+    height: 10px;
+    
+}
+
+.event-player-details
+{
+    width: 75%;
+}
+ .event-player-detail
+{
+    margin: 10px 10px 10px 10px;
+}
+
+#substitution .event-team-logo
+{
+    width: 25%;
+    
+}
+
+#give-card .event-team-logo, #goal .event-team-logo
+{
+    width: 25%;
+    
+}
