@@ -31,6 +31,9 @@ function App() {
             <Route path="/:sport">
               <Home />
             </Route>
+            <Route path="/">
+              <Home />
+            </Route>
           </Switch>
           <Footer />
         </BrowserRouter>

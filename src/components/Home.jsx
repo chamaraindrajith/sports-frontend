@@ -5,10 +5,13 @@ import NewsSideBar from "./layouts/news/NewsSideBar";
 import { useParams } from "react-router-dom";
 
 function Home() {
-  const { sport } = useParams();
+  var { sport } = useParams();
+  if (sport == undefined) {
+    sport = "cricket"; // default sport
+  }
   return (
     <div className="container">
-      <div className="row">
+      <div className="row"> 
         <div className="col-md-2 col" id="menuItemNameDiv">
           <div className="container-left flex-column">
             <MenuItems />
