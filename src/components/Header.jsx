@@ -16,8 +16,8 @@ function Header() {
             <div className="header">
                 <div className="navbar navbar-expand navbar-dark flex-column flex-md-row sticky-top" id="top-nav">
                     <a className="navbar-brand" href="#">
-                        <img src=".\images\icons\menu-handler.png" width={40} height={40} className="d-inline-block align-top" alt="" />
-                        <img src=".\images\icons\scorexcard logo light.png" width={205} height={40} className="d-inline-block align-top" alt="" />
+                        <img src="\images\icons\menu-handler.png" width={40} height={40} className="d-inline-block align-top" alt="" />
+                        <img src="\images\icons\scorexcard logo light.png" width={205} height={40} className="d-inline-block align-top" alt="" />
                     </a>
                     <div className="navbar-nav-scroll">
                         <ul className="navbar-nav bd-navbar-nav flex-row">
