@@ -1,0 +1,41 @@
+
+.lineup-main-container .swap-button
+{
+    width: 50%;
+    align-content: center;
+}
+
+.team-card-header .team-logo
+{
+    width: 10%;
+}
+
+.team-card-header .team-name
+{
+    width: 70%;
+}
+
+.team-card-header .team-formation
+{
+    width: 20%;
+}
+
+ .team-card .list-group li
+{
+    background-color: #0e0e0e;
+    font-size: 18px;
+    border: none;
+    color: rgb(175, 175, 175);
+}
+
+.badge-pill {
+    margin-right: 15px;
+}
+
+.team-card-container {
+    display: none;
+}
+
+.team-card-container-active {
+    display: block;
+}

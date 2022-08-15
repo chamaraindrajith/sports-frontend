@@ -59,7 +59,7 @@ function GameInfoTabs(props) {
               Table
             </Link>
             <Link to={tab_url + "/summary"} className={`game_info_tab ${summary_class}`} style={{ textDecoration: "none" }}>
-              Summary
+              TimeLine
             </Link>
             <Link to={tab_url + "/line-ups"} className={`game_info_tab ${lineups_class}`} style={{ textDecoration: "none" }}>
               Line-Ups

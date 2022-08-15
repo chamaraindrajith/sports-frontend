@@ -24,6 +24,7 @@ function StageCards(props) {
 
   function getStages(date) {
     // https://reactjs.org/docs/faq-ajax.html
+    var date = "2022-08-03";
     var url = "https://sports.pfplapp.com/backend/public/api/get/" + props.sport + "/date/" + date + "/json";
     // var url = "http://127.0.0.1/sports/laravel/sports/backend/public/api/get/cricket/date/2022-07-27/json";
     fetch(url)
@@ -31,7 +32,7 @@ function StageCards(props) {
       .then(
         (result) => {
           setTimeout(() => {
-            console.log(result.stages);
+            // console.log(result.stages);
             setItems(result.stages);
             setIsLoaded(true);
           }, 1000);

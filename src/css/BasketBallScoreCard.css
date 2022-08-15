@@ -1,0 +1,236 @@
+
+/* Center container style ****************************************************/
+
+.container-center {
+    width: 50%;
+    height: fit-content;
+    max-height: 90vh;
+    min-width: 500px;
+    border: 1.5px solid #272727;
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 10px;
+
+    color: white;
+    font-size: 16px;
+}
+
+.scorecard {
+    height: 240px;
+}
+
+.scorecard .league-detail {
+    height: 60px;
+    border-radius: 10px;
+    padding: 0px 20px;
+    vertical-align: middle;
+    align-items: center;
+
+    font-size: 16px;
+}
+
+.league-detail #back-btn {
+    width: 0;
+}
+
+.league-detail #league-icon {
+    margin-right: 15px;
+}
+
+.scorecard .league-stage {
+    margin: auto;
+}
+
+.scorecard .league-stage #stage {
+    font-family: 'Metropolis Medium';
+}
+
+.scorecard .league-stage #league {
+    font-family: 'Metropolis Thin';
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.score {
+    height: 170px;
+    background-color: #141414c5;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.score .team-one, .team-two {
+    width: 30%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 15px 20px;
+}
+
+.score .points-card {
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/* main score view */
+
+.points a {
+    font-size: 30px;
+    font-family: 'Metropolis Medium';
+    margin: 0px 8px 0px 8px;
+}
+
+/* match time viewer under the score */
+
+#time {
+    font-size: 12px;
+    color: #c4c4c4;
+}
+
+.score #team-name {
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: 'Metropolis Medium';
+}
+
+/* info and table buttons */
+
+.container-center .info-bar .btn {
+    width: 120px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-family: 'Metropolis Medium';
+    background-color: #0e0e0e;
+    margin: 10px 10px;
+}
+
+.container-center .info-bar .clicked {
+    background-color: #22ca68;
+}
+
+.container-center .info-bar .btn:focus {
+    box-shadow: none !important;
+}
+
+.info-content {
+    display: none;
+}
+
+.info-content-active {
+    display: block;
+}
+
+/* score table */
+
+.container-table {
+    padding: 0px 10px;
+}
+
+.point-table {
+    margin: 10px 0px 0px 0px;
+}
+
+.point-table tr {
+    background-color: #0e0e0e;
+    font-size: 14px;
+    font-family: 'Metropolis Thin';
+}
+
+tbody tr td, tbody tr th{
+    font-size: 14px;
+}
+
+.point-table tbody tr td, thead th {
+    text-align: center;
+}
+
+/* match info panel */
+
+.match-info {
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+.match-info lable {
+    color: #b8b8b8;
+    font-size: 16px;
+}
+
+.match-date, .match-venue {
+    height: 100px;
+    background-color: #141414c5;
+    border-radius: 10px;
+}
+
+.match-info img {
+    margin: 0px 40px 0px 40px;
+}
+
+#date, #venue {
+    font-size: 14px;
+    font-family: 'Metropolis Thin';
+    margin-top: -5px;
+    color: #adadad;
+}
+
+/* **************************** Styles for mobile viewport ************************ */
+
+@media (max-width:1140px) {
+
+    /* Center container style */
+    
+    .container-center {
+        width: 100%;
+        max-height: fit-content;
+        min-width: 300px;
+
+        margin: 0px;
+        padding: 10px 10px 0px 10px;
+    }
+    
+    .scorecard .league-detail {
+        margin-top: -5px;
+    }
+
+    .league-detail #back-btn {
+        width: unset;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    
+    .match-date, .match-venue {
+        height: 80px;
+    }
+
+    .match-venue {
+        margin-top: 0px;
+    }
+}
+
+/* Reduce font size for smaller screens */
+
+@media (max-width:420px) {
+    .points a {
+        font-size: 30px;
+    }
+
+    .score #team-name {
+        font-size: 17px;
+    }
+
+    .time-info #date, #venue {
+        font-size: 15px;
+    }
+
+    .match-date, .match-venue {
+        height: 80px;
+        margin: 10px 0px;
+        font-size: 80%;
+    }
+
+    .container-center .btn {
+        width: 110px;
+        font-size: 17px;
+    }
+}

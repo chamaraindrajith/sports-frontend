@@ -2,25 +2,54 @@ import { React, useState } from "react";
 import { ReactDimmer } from "react-dimmer";
 import { Menu } from "./../components/Menu";
 import "./index.css";
+import "../css/header.css";
 
 function Header() {
-  const [isMenuOpen, setMenu] = useState(false);
+    const [isMenuOpen, setMenu] = useState(false);
 
-  const handleMenu = () => {
-    setMenu((prevState) => !prevState);
-  };
+    const handleMenu = () => {
+        setMenu((prevState) => !prevState);
+    };
 
-  return (
-    <header>
-        <div className="header">
-          <img alt="" src="https://www.livescore.com/ls-web-assets/svgs/common/hamburger-menu-09595bd28744ad1fa99a010f1f41f34b.svg" style={{width:"14px"}} onClick={handleMenu}></img>
-          <img src="https://www.livescore.com/ls-web-assets/svgs/common/livescore-logo-b3b211143dccd9e22d164701d32a390f.svg" alt="" />
-          <img alt="" src="https://www.livescore.com/ls-web-assets/svgs/common/search-1e1f1087166a2eae49a82dd529b7aafd.svg" style={{width:"14px"}}></img>
-        </div>
-      <Menu isMenuOpen={isMenuOpen} />
-      <ReactDimmer isOpen={isMenuOpen} exitDimmer={setMenu} zIndex={100} blur={1.5} />
-    </header>
-  );
+    return (
+        <header>
+            <div className="header">
+                <div className="navbar navbar-expand navbar-dark flex-column flex-md-row sticky-top" id="top-nav">
+                    <a className="navbar-brand" href="#">
+                        <img src="\images\icons\menu-handler.png" width={40} height={40} className="d-inline-block align-top" alt="" />
+                        <img src="\images\icons\scorexcard logo light.png" width={205} height={40} className="d-inline-block align-top" alt="" />
+                    </a>
+                    <div className="navbar-nav-scroll">
+                        <ul className="navbar-nav bd-navbar-nav flex-row">
+                            <li className="nav-item" />
+                            <li className="nav-item">
+                                <a className="nav-link active" id="score" href="#">
+                                    Score
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" id="fav" href="#">
+                                    Favourites
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" id="news" href="#">
+                                    News
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" id="fanclub" href="#">
+                                    Fan Club
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <Menu isMenuOpen={isMenuOpen} />
+            <ReactDimmer isOpen={isMenuOpen} exitDimmer={setMenu} zIndex={100} blur={1.5} />
+        </header>
+    );
 }
 
 export default Header;

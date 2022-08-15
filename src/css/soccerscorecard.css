@@ -1,0 +1,139 @@
+.match-header {
+    display: flex;
+    border-bottom: 2px solid rgba(48, 48, 48, 0.1);
+    padding: 16px;
+  }
+  
+  .match-status {
+    background-color:#fdeaec;
+    color: #d72641;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin-right: auto;
+    height: fit-content;
+  }
+  .match-status:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .match-tournament {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+  .match-tournament img {
+    width: 48px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 12px;
+  }
+  
+  .match-actions {
+    display: flex;
+    margin-left: auto;
+  }
+  
+  .btn-icon {
+    border: 0;
+    background-color: transparent;
+    color:#dbdade;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+
+
+.score {
+    height: fit-content;
+    background-color: #141414c5;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.score .team-one, .team-two {
+    width: 30%;
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 15px 20px;
+}
+
+.score .team-one img,.score .team-two img
+{
+width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+
+
+.score .points-card {
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+@media(max-width:1140px)
+{
+  .match-header
+    {
+        align-items: center;
+    }
+    .match-tournament
+    {
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .match-tournament img
+    {
+        width: 32px;
+    }
+    .match-status {
+       
+        font-size: 12px;
+        padding: 6px 10px;
+        
+       
+      }
+      .match-status:before {
+        
+        width: 4px;
+        height: 4px;
+        
+      }
+      .score
+      {
+        height: 150px;
+      }
+      .score .team-one img,.score .team-two img
+      {
+        width: 75px;
+        height: 75px;
+        margin-top: 10px;
+      }
+      
+}
