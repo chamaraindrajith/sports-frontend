@@ -16,17 +16,14 @@ function StageCards(props) {
 
   useEffect(() => {
     setIsLoaded(false);
-    setError(null);
+    setError(false);
     console.log("Location changed");
     let today = new Date().toISOString().slice(0, 10);
     getStages(today);
   }, [location]);
 
   function getStages(date) {
-    // https://reactjs.org/docs/faq-ajax.html
-    // var date = "2022-08-03";
     var url = "https://sports.pfplapp.com/backend/public/api/get/" + props.sport + "/date/" + date + "/json";
-    // var url = "http://127.0.0.1/sports/laravel/sports/backend/public/api/get/cricket/date/2022-07-27/json";
     fetch(url)
       .then((res) => res.json())
       .then(
@@ -38,8 +35,8 @@ function StageCards(props) {
           }, 1000);
         },
         (error) => {
-          setIsLoaded(true);
           setError(error);
+          setIsLoaded(true);
         }
       );
   }

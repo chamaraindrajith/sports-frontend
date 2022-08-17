@@ -8,6 +8,9 @@
     /* max-width: 1300px; */
     max-width: 1124px;
   }
+  header {
+    margin-bottom: 16px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -34,9 +37,6 @@
 }
 
 .flex-column {
-  /*border: 1px solid #222;*/
-  border-radius: 8px;
-  padding: 0px 15px 0px;
 }
 
 @media (min-width: 768px) {
@@ -85,4 +85,10 @@
   border: 1px solid #222;
   border-radius: 5px;
   text-align: center;
+}
+
+.border_box {
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 0px 15px 0px;
 }
