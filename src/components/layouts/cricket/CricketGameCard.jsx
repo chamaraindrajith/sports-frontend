@@ -6,7 +6,7 @@ import "./../../../css/CricketGameCard.css";
 
 function CricketGameCard(props) {
   return (
-    <Box sx={{ mt: 0.75, mb: 0.75 }} style={{ display: "flex" }} className="gameCard cricketGameCard">
+    <Box sx={{ mt: 0.75, mb: 0.75 }} style={{ display: "flex" }} className="gameCard cricketGameCard" id={"gameCard_" + props.game.game_id} >
       <div class="cricket_details">
         <div className="match_row_cricket_phase">
           <span>{props.game.cricket_phase + ' (' + props.game.cricket_phase_info + ')'}</span>
@@ -33,8 +33,7 @@ function CricketGameCard(props) {
           <span>{props.game.live_status_comment}</span>
         </div>
       </div>
-      <AiOutlineStar style={{ fontSize: "25px" }} />
-      {/* <AiTwotoneStar style={{ fontSize: "25px" }} /> */}
+      <AiOutlineStar style={{ fontSize: "25px", visibility: "hidden" }} />
     </Box>
   );
 }

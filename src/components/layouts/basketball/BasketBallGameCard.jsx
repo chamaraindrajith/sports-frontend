@@ -6,7 +6,7 @@ import "./../../../css/BasketBallGameCard.css";
 
 function BasketBallGameCard(props) {
   return (
-    <Box sx={{ mt: 0.75, mb: 0.75 }} style={{ display: "flex" }} className="gameCard BasketBallGameCard">
+    <Box sx={{ mt: 0.75, mb: 0.75 }} style={{ display: "flex" }} className="gameCard BasketBallGameCard" id={"gameCard_" + props.game.game_id} >
       <div>
         <span className="game_card_time">21.00</span>
       </div>
@@ -25,7 +25,6 @@ function BasketBallGameCard(props) {
         <span>{props.game.score[0].Tr2}</span>
       </div>
       <AiOutlineStar style={{ fontSize: "30px" }} />
-      {/* <AiTwotoneStar style={{ fontSize: "25px" }} /> */}
     </Box>
   );
 }

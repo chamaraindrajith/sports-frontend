@@ -23,3 +23,22 @@
   color: #aaa;
   font-weight: 500;
 }
+.star_inactive {
+}
+.star_active {
+}
+
+.star_svg {
+  font-size: 25px;
+}
+
+.star {
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 30%;
+}
+
+.stage_card_card {
+  position: relative;
+}
