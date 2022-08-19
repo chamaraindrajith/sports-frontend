@@ -22,7 +22,7 @@ function SportsListMenu(props) {
   }
 
   return (
-    <div id="sport_chips">
+    <div id="sport_chips" className="chip_menu">
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
         <Stack direction="row" spacing={1}>
           <Link to="/soccer" className="sport_chips_links" style={{ textDecoration: "none" }}>

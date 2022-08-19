@@ -7,7 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function Layout(props) {
-  var { sport, category, subcategory, game_name, game_id, tab } = useParams();
+  var { sport, category, stage, game_name, game_id, tab } = useParams();
   if (sport == undefined) {
     sport = "cricket"; // default sport
   } else if (sport != "cricket" && sport != "basketball" && sport != "soccer") {
@@ -38,7 +38,7 @@ function Layout(props) {
     );
   } else if (props.layout == "redirect") {
     // full
-    return <Redirect to={"/" + sport + "/favourites/matches"} />;
+    return <Redirect to={"/" + sport + "/favorites/matches"} />;
   } else if (props.layout == "contact") {
     // full
     return (
@@ -62,13 +62,13 @@ function Layout(props) {
       </div>
     );
   }
-  //  else if (props.layout == "favourites") {
+  //  else if (props.layout == "favorites") {
   //   // middle
   //   return (
   //     <div>
   //       <Header sport={sport} />
   //       <div className="container">
-  //         <div className="box_message">{sport} favourites feature will available soon</div>
+  //         <div className="box_message">{sport} favorites feature will available soon</div>
   //       </div>
   //     </div>
   //   );
@@ -98,7 +98,7 @@ function Layout(props) {
   } else {
     return (
       <div>
-        {props.layout}
+        {/* {props.layout} */}
         <Header sport={sport} />
         <div className="container">
           <div className="row">
@@ -109,7 +109,7 @@ function Layout(props) {
             </div>
             <div className="col-md-6 col" id="content_div">
               <div className="container-left d-flex flex-column border_box" id="content_div_inside" >
-                <Content sport={sport} layout={props.layout} />
+                <Content sport={sport} layout={props.layout} favorite_tab={props.favorite_tab} />
               </div>
             </div>
             <div className="col-md-4 col" id="news_div">

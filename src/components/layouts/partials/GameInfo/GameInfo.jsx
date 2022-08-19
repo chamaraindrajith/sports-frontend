@@ -5,7 +5,7 @@ import GameInfoTabs from "./../../partials/GameInfo/GameInfoTabs";
 import GameInfoTabsContent from "./../../partials/GameInfo/GameInfoTabsContent";
 
 function GameInfo(props) {
-  const { category, subcategory, game_name, game_id, tab } = useParams();
+  const { category, stage, game_name, game_id, tab } = useParams();
 
   return (
     <div>

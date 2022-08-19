@@ -3,10 +3,12 @@ import Box from "@mui/material/Box";
 import { AiFillCaretRight } from "react-icons/ai";
 import "./../../css/StageCard.css";
 import GameCard from "./GameCard";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 
 function StageCard(props) {
+  var { stage } = useParams();
+
   const [favorite_games, setFavoriteGames] = useState([]);
 
   useEffect(() => {
@@ -15,8 +17,12 @@ function StageCard(props) {
       setFavoriteGames(fav_games);
     }
 
-    if (props.layout == "favourites") {
+    if (props.layout == "favorites") {
       listFavorites();
+    }
+
+    if (props.layout == "stage") {
+      listStage();
     }
   }, []);
 
@@ -98,10 +104,25 @@ function StageCard(props) {
       }
     }
   }
+
+  // hide all stages, games and show only selected stage
+  function listStage() {
+    var stage_cards = document.querySelectorAll(".stage_card");
+
+    for (let stage_card of stage_cards) {
+      stage_card.style.display = "none";
+    }
+
+    for (let stage_card of stage_cards) {
+      if (stage_card.classList.contains("stage_card_" + stage)) {
+        stage_card.style.display = "block";
+      }
+    }
+  }
   return (
-    <div className="stage_card" id={"stage_card_" + props.stage_id}>
+    <div className={"stage_card stage_card_" + props.stage.slug} id={"stage_card_" + props.stage_id}>
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
-        <div className="stage_card_stage">
+        <Link to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug} className="stage_card_stage" style={{ textDecoration: "none" }}>
           <div>
             <img
               src="https://static.livescore.com/i2/fh/xcr-intl-test.jpg"
@@ -118,7 +139,8 @@ function StageCard(props) {
             </div>
           </div>
           <AiFillCaretRight style={{ fontSize: "25px" }} />
-        </div>
+        </Link>
+
         {props.stage.games.map((game) => (
           <div className="game_card" id={"game_card_" + game.game_id}>
             <Link

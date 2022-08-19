@@ -122,3 +122,7 @@
   font-size: 12px;
   font-weight: bold;
 }
+
+.tab_menu, .chip_menu {
+  border-bottom: 1px solid #222;
+}

@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import "./../../../../css/GameInfoTabs.css";
 
 function GameInfoTabs(props) {
-  const { category, subcategory, game_name, game_id, tab } = useParams();
+  const { category, stage, game_name, game_id, tab } = useParams();
 
   var info_class = "";
   var scorecard_class = "";
@@ -36,16 +36,10 @@ function GameInfoTabs(props) {
     scorecard_class = "active";
   }
 
-  var tab_url = "/" + props.sport + "/" + category + "/" + subcategory + "/" + game_name + "/" + game_id;
+  var tab_url = "/" + props.sport + "/" + category + "/" + stage + "/" + game_name + "/" + game_id;
 
   return (
-    <div class="w-100">
-      <div class="scroller scroller-left float-start mt-2">
-        <i class="bi bi-caret-left-fill"></i>
-      </div>
-      <div class="scroller scroller-right float-end mt-2">
-        <i class="bi bi-caret-right-fill"></i>
-      </div>
+    <div className="tab_menu">
       <div class="wrapper-nav" id="game_info_tabs">
         <Box sx={{ mt: 1.5, mb: 1.5 }}>
           <Stack direction="row" spacing={1}>

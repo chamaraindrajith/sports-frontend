@@ -40,26 +40,26 @@ function App() {
             <Route path="/fan-club">
               <Layout layout="fan-club" />
             </Route>
-            <Route path="/:sport/favourites/competitions">
-              <Layout layout="favourites" />
+            <Route path="/:sport/favorites/competitions">
+              <Layout layout="favorites" favorite_tab="competitions" />
             </Route>
-            <Route path="/:sport/favourites/matches">
-              <Layout layout="favourites" />
+            <Route path="/:sport/favorites/matches">
+              <Layout layout="favorites" favorite_tab="matches" />
             </Route>
-            <Route path="/:sport/favourites">
-              <Layout layout="redirect" redirectTo="/favourites/matches" />
+            <Route path="/:sport/favorites">
+              <Layout layout="redirect" redirectTo="/favorites/matches" />
             </Route>
-            <Route path="/:sport/:category/:subcategory/:game_name/:game_id/:tab">
+            <Route path="/:sport/:category/:stage/:game_name/:game_id/:tab">
               <Layout layout="game" />
             </Route>
-            <Route path="/:sport/:category/:subcategory/:game_name/:game_id">
+            <Route path="/:sport/:category/:stage/:game_name/:game_id">
               <Layout layout="game" />
             </Route>
-            <Route path="/:sport/:category/:subcategory/:game_name/">
+            <Route path="/:sport/:category/:stage/:game_name/">
               <Layout layout="404" />
             </Route>
-            <Route path="/:sport/:category/:subcategory">
-              <Layout layout="subcategory" />
+            <Route path="/:sport/:category/:stage">
+              <Layout layout="stage" />
             </Route>
             <Route path="/:sport/:category">
               <Layout layout="category" />
