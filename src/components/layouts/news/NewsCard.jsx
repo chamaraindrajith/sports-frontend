@@ -13,7 +13,7 @@ function NewsSideBar(props) {
   }
 
   return (
-    <div className="stage_card">
+    <div className="news_card">
       <div className="news_card_box">
         <div className="news_card_parent">
           <img className="news_card_image" src={src + props.news.image_id + ".jpeg"} id={"img_" + props.news.id}></img>

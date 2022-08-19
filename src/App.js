@@ -4,9 +4,9 @@ import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 
 import "./css/App.css";
 import "./css/MenuItems.css";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Layout from "./components/Layout";
 
 const darkTheme = createTheme({
   palette: {
@@ -20,22 +20,58 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <BrowserRouter>
           <CssBaseline />
-          <Header />
+          {/* <Header /> */}
           <Switch>
+            <Route path="/mobile">
+              <Layout layout="mobile" />
+            </Route>
+            <Route path="/privacy">
+              <Layout layout="privacy" />
+            </Route>
+            <Route path="/contact">
+              <Layout layout="contact" />
+            </Route>
+            <Route path="/settings">
+              <Layout layout="settings" />
+            </Route>
+            <Route path="/news">
+              <Layout layout="news" />
+            </Route>
+            <Route path="/fan-club">
+              <Layout layout="fan-club" />
+            </Route>
+            <Route path="/:sport/favourites/competitions">
+              <Layout layout="favourites" />
+            </Route>
+            <Route path="/:sport/favourites/matches">
+              <Layout layout="favourites" />
+            </Route>
+            <Route path="/:sport/favourites">
+              <Layout layout="redirect" redirectTo="/favourites/matches" />
+            </Route>
             <Route path="/:sport/:category/:subcategory/:game_name/:game_id/:tab">
-              <Home />
+              <Layout layout="game" />
             </Route>
             <Route path="/:sport/:category/:subcategory/:game_name/:game_id">
-              <Home />
+              <Layout layout="game" />
+            </Route>
+            <Route path="/:sport/:category/:subcategory/:game_name/">
+              <Layout layout="404" />
+            </Route>
+            <Route path="/:sport/:category/:subcategory">
+              <Layout layout="subcategory" />
+            </Route>
+            <Route path="/:sport/:category">
+              <Layout layout="category" />
             </Route>
             <Route path="/:sport">
-              <Home />
+              <Layout layout="stages" />
             </Route>
             <Route path="/">
-              <Home />
+              <Layout layout="stages" />
             </Route>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
       </ThemeProvider>
     </div>

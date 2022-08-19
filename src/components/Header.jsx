@@ -4,8 +4,9 @@ import { Menu } from "./../components/Menu";
 import "./index.css";
 import "../css/header.css";
 import Divider from "@mui/material/Divider";
+import { Link, useParams } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   const [isMenuOpen, setMenu] = useState(false);
 
   const handleMenu = () => {
@@ -26,28 +27,30 @@ function Header() {
         <div className="d-flex p-2 justify-content-around align-items-center">
           <div>
             <img src="http://localhost:3000/images/icons/menu-handler.png" width={25} onClick={handleMenu} />
-            <img className="topMenu2Logo" src="http://localhost:3000/images/icons/scorexcard%20logo%20light.png" />
+            <Link to="/">
+              <img className="topMenu2Logo" src="http://localhost:3000/images/icons/scorexcard%20logo%20light.png" />
+            </Link>
           </div>
-          <div className="d-flex p-2 center align-items-center">
+          <Link to={"/" + props.sport} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/cricket-scores-active-2d77d8149f51f9106fc0f4024631dd20.svg" width={20} />
             <span className="topMenu2LinkText">Score</span>
-          </div>
-          <div className="d-flex p-2 center align-items-center">
+          </Link>
+          <Link to={"/" + props.sport + "/favourites"} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/favourites-5b58c2e7fd0c287f9bd1fd6b23b15019.svg" width={20} />
-            <span className="topMenu2LinkText">Favourites</span>
-          </div>
-          <div>
+            <span className="topMenu2LinkText">Favorites</span>
+          </Link>
+          <Link to="/news" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/news-article-72be5c0a80489a5b2c0fb7ff831784dc.svg" width={20} />
             <span className="topMenu2LinkText">News</span>
-          </div>
-          <div>
+          </Link>
+          <Link to="/fan-club" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/news-article-72be5c0a80489a5b2c0fb7ff831784dc.svg" width={20} />
             <span className="topMenu2LinkText">Fan Club</span>
-          </div>
-          <div>
+          </Link>
+          <Link to="/mobile" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/download-a627554318349f77bb4b3634e94b0205.svg" width={20} />
             <span className="topMenu2LinkText">Get the app</span>
-          </div>
+          </Link>
         </div>
         <Divider variant="middle" />
       </div>

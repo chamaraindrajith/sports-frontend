@@ -8,7 +8,7 @@ function NewsSideBar(props) {
   const sport_name = props.sport.charAt(0).toUpperCase() + props.sport.slice(1); // capitalize first letter
 
   return (
-    <div className="stage_card">
+    <div>
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
         <div className="stage_card_stage">
           <div class="header__stage">

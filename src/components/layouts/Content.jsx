@@ -9,23 +9,48 @@ import GameInfo from "./partials/GameInfo/GameInfo";
 
 function Content(props) {
   const { category } = useParams();
+
+  if (props.layout == "favourites") {
+    return (
+      <div>
+        {props.layout}
+        <SportsListMenu sport={props.sport} />
+        <Divider variant="middle" />
+        <StageCards sport={props.sport} layout="favourites" />
+      </div>
+    );
+  } else if (props.layout == "game") {
+    return (
+      <div>
+        {props.layout}
+        <Divider variant="middle" />
+        <GameInfo sport={props.sport} />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {props.layout}
+        <SportsListMenu sport={props.sport} />
+        <Divider variant="middle" />
+        <Calender />
+        <Divider variant="middle" />
+        <StageCards sport={props.sport} />
+      </div>
+    );
+  }
+
   return (
     <div>
+      {props.layout}
       <SportsListMenu sport={props.sport} />
-      {category == undefined ? (
-        <div>
-          <Divider variant="middle" />
-          <Calender />
-          <Divider variant="middle" />
-          <StageCards sport={props.sport} />
-        </div>
-      ) : (
-        <div>
-          <Divider variant="middle" />
-          <GameInfo sport={props.sport} />
-        </div>
-      )}
 
+      <div>
+        <Divider variant="middle" />
+        <Calender />
+        <Divider variant="middle" />
+        <StageCards sport={props.sport} />
+      </div>
     </div>
   );
 }
