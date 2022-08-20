@@ -7,9 +7,13 @@ import { Link, useParams } from "react-router-dom";
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 
 function StageCard(props) {
-  var { stage } = useParams();
+  var { category, stage } = useParams();
 
   const [favorite_games, setFavoriteGames] = useState([]);
+  const [favorite_stages, setFavoriteStages] = useState([]);
+
+  const [stage_card_class, setStageCardClass] = useState([]);
+  const [game_card_class, setGameCardClass] = useState([]);
 
   useEffect(() => {
     const fav_games = JSON.parse(localStorage.getItem("favorite_games"));
@@ -17,12 +21,25 @@ function StageCard(props) {
       setFavoriteGames(fav_games);
     }
 
-    if (props.layout == "favorites") {
+    const fav_stages = JSON.parse(localStorage.getItem("favorite_stages"));
+    if (fav_stages) {
+      setFavoriteStages(fav_stages);
+    }
+
+    if (props.layout == "favorites" && props.favorite_tab == "matches") {
       listFavorites();
+    } else if (props.layout == "favorites" && props.favorite_tab == "competitions") {
+      setStageCardClass('stage_card_favorites_competitions');
+      setGameCardClass('game_card_favorites_competitions');
+      listStageFavorites();
     }
 
     if (props.layout == "stage") {
       listStage();
+    }
+
+    if (props.layout == "category") {
+      listCategory();
     }
   }, []);
 
@@ -30,6 +47,13 @@ function StageCard(props) {
   favorite_games.map((favorite_game) => {
     if (favorite_game.sport == props.sport) {
       starActive(favorite_game.game_id);
+    }
+  });
+
+  // show active stars stage
+  favorite_stages.map((favorite_stage) => {
+    if (favorite_stage.sport == props.sport) {
+      stageStarActive(favorite_stage.stage_id);
     }
   });
 
@@ -45,6 +69,18 @@ function StageCard(props) {
     }
   }
 
+  // active star icon stage
+  function stageStarActive(stage_id) {
+    var star_inactive_elem = document.querySelector("#stage_star_inactive_" + stage_id);
+    if (star_inactive_elem) {
+      star_inactive_elem.style.display = "none";
+    }
+    var star_active_elem = document.querySelector("#stage_star_active_" + stage_id);
+    if (star_active_elem) {
+      star_active_elem.style.display = "unset";
+    }
+  }
+
   // inactive star icon
   function starInactive(game_id) {
     var star_inactive_elem = document.querySelector("#star_inactive_" + game_id);
@@ -52,6 +88,18 @@ function StageCard(props) {
       star_inactive_elem.style.display = "unset";
     }
     var star_active_elem = document.querySelector("#star_active_" + game_id);
+    if (star_active_elem) {
+      star_active_elem.style.display = "none";
+    }
+  }
+
+  // inactive star icon
+  function stageStarInactive(stage_id) {
+    var star_inactive_elem = document.querySelector("#stage_star_inactive_" + stage_id);
+    if (star_inactive_elem) {
+      star_inactive_elem.style.display = "unset";
+    }
+    var star_active_elem = document.querySelector("#stage_star_active_" + stage_id);
     if (star_active_elem) {
       star_active_elem.style.display = "none";
     }
@@ -74,6 +122,27 @@ function StageCard(props) {
 
       favorite_games = favorite_games.filter((favorite_games) => favorite_games.game_id != game_id.toString());
       localStorage["favorite_games"] = JSON.stringify(favorite_games);
+    }
+  }
+
+  // click stars stage
+  function favoriteStageControll(e, stage_id, status) {
+    // alert(localStorage["favorite_stages"]);
+    if (localStorage["favorite_stages"]) {
+    } else {
+      var stage_ids = [];
+      localStorage["favorite_stages"] = JSON.stringify(stage_ids);
+    }
+    var favorite_stages = JSON.parse(localStorage.getItem("favorite_stages"));
+    if (status == 1) {
+      stageStarActive(stage_id);
+      favorite_stages.push({ stage_id: stage_id.toString(), sport: props.sport, stage_id: props.stage_id.toString() });
+      localStorage["favorite_stages"] = JSON.stringify(favorite_stages);
+    } else if (status == 0) {
+      stageStarInactive(stage_id);
+
+      favorite_stages = favorite_stages.filter((favorite_stages) => favorite_stages.stage_id != stage_id.toString());
+      localStorage["favorite_stages"] = JSON.stringify(favorite_stages);
     }
   }
 
@@ -105,6 +174,28 @@ function StageCard(props) {
     }
   }
 
+  // hide all stages, games and show only favorites
+  function listStageFavorites() {
+    var stage_cards = document.querySelectorAll(".stage_card");
+
+    for (let stage_card of stage_cards) {
+      stage_card.style.display = "none";
+    }
+
+    var favorite_stages = JSON.parse(localStorage.favorite_stages);
+    var fav_count = 0;
+    for (let favorite_stage of favorite_stages) {
+      if (fav_count > 7 / 9) {
+      }
+      var stage_card_element = document.querySelector("#stage_card_" + favorite_stage.stage_id);
+      if (stage_card_element) {
+        stage_card_element.style.display = "block";
+      } else {
+        console.log("game id = " + favorite_stage.game_id + " and stage id = " + favorite_stage.stage_id + " must be removed from local storage");
+      }
+    }
+  }
+
   // hide all stages, games and show only selected stage
   function listStage() {
     var stage_cards = document.querySelectorAll(".stage_card");
@@ -119,30 +210,56 @@ function StageCard(props) {
       }
     }
   }
+
+  // hide all stages, games and show only selected stage
+  function listCategory() {
+    var stage_cards = document.querySelectorAll(".stage_card");
+
+    for (let stage_card of stage_cards) {
+      stage_card.style.display = "none";
+    }
+
+    for (let stage_card of stage_cards) {
+      if (stage_card.classList.contains("stage_card_" + category)) {
+        stage_card.style.display = "block";
+      }
+    }
+  }
+
   return (
-    <div className={"stage_card stage_card_" + props.stage.slug} id={"stage_card_" + props.stage_id}>
+    <div className={"stage_card stage_card_" + props.stage.slug + " " + "stage_card_" + props.stage.category_slug} id={"stage_card_" + props.stage_id}>
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
-        <Link to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug} className="stage_card_stage" style={{ textDecoration: "none" }}>
-          <div>
-            <img
-              src="https://static.livescore.com/i2/fh/xcr-intl-test.jpg"
-              style={{
-                width: "25px",
-                marginRight: "13px",
-              }}
-            />
-          </div>
-          <div class="header__stage">
-            <div className="header__stage__headers">
-              <span className="category-header__stage">{props.stage.name}</span>
-              <span className="category-header__category">{props.stage.category_name}</span>
+        <div className="stage_card_stage_parent">
+          <Link to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug} className={"stage_card_stage " + stage_card_class} style={{ textDecoration: "none" }}>
+            <div>
+              <img
+                src="https://static.livescore.com/i2/fh/xcr-intl-test.jpg"
+                style={{
+                  width: "25px",
+                  marginRight: "13px",
+                }}
+              />
             </div>
+            <div class="header__stage">
+              <div className="header__stage__headers">
+                <span className="category-header__stage">{props.stage.name}</span>
+                <span className="category-header__category">{props.stage.category_name}</span>
+              </div>
+            </div>
+            <AiFillCaretRight style={{ fontSize: "25px" }} />
+          </Link>
+          <div>
+            <span onClick={(e) => favoriteStageControll(e, props.stage_id, 1)} id={"stage_star_inactive_" + props.stage_id} className="stage_star stage_star_inactive">
+              <AiOutlineStar className="star_svg" />
+            </span>
+            <span onClick={(e) => favoriteStageControll(e, props.stage_id, 0)} id={"stage_star_active_" + props.stage_id} className="stage_star stage_star_active" style={{ display: "none" }}>
+              <AiTwotoneStar className="star_svg" />
+            </span>
           </div>
-          <AiFillCaretRight style={{ fontSize: "25px" }} />
-        </Link>
+        </div>
 
         {props.stage.games.map((game) => (
-          <div className="game_card" id={"game_card_" + game.game_id}>
+          <div className={"game_card " + game_card_class} id={"game_card_" + game.game_id}>
             <Link
               to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug + "/" + game.game_id + "/" + game.game_id}
               className="sport_chips_links"
@@ -151,10 +268,10 @@ function StageCard(props) {
               <GameCard sport={props.sport} game={game} category_slug={props.stage} />
             </Link>
             <span onClick={(e) => favoriteControll(e, game.game_id, 1)} id={"star_inactive_" + game.game_id} className="star star_inactive">
-              <AiOutlineStar className="star_svg" gameId={game.game_id} />
+              <AiOutlineStar className="star_svg" />
             </span>
             <span onClick={(e) => favoriteControll(e, game.game_id, 0)} id={"star_active_" + game.game_id} className="star star_active" style={{ display: "none" }}>
-              <AiTwotoneStar className="star_svg" gameId={game.game_id} />
+              <AiTwotoneStar className="star_svg" />
             </span>
           </div>
         ))}

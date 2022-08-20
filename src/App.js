@@ -3,7 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 
 import "./css/App.css";
-import "./css/MenuItems.css";
+import "./css/ExploreMenu.css";
 // import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";

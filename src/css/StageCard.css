@@ -39,6 +39,30 @@
   top: 30%;
 }
 
-.game_card {
+.stage_star {
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  top: 19%;
+}
+
+.game_card,
+.stage_card_stage_parent {
   position: relative;
+}
+
+.stage_card_favorites_competitions {
+  background: rgb(24, 24, 24);
+  height: 50px;
+  padding: 10px 15px;
+  padding-left: 15px;
+  border-radius: 7.5px;
+  padding-right: 10px;
+}
+.stage_card_favorites_competitions:hover {
+  background: #333333;
+}
+
+.game_card_favorites_competitions {
+  display: none;
 }

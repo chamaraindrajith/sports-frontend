@@ -59,7 +59,7 @@ function StageCards(props) {
     return (
       <div>
         {items.map((stage) => (
-          <StageCard sport={props.sport} stage_id={stage.stage_id} stage={stage} layout={props.layout} />
+          <StageCard sport={props.sport} stage_id={stage.stage_id} stage={stage} layout={props.layout} favorite_tab={props.favorite_tab} />
         ))}
       </div>
     );

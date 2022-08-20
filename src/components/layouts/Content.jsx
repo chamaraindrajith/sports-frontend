@@ -9,23 +9,24 @@ import FavoritesMenu from "./partials/Favorites/FavoritesMenu";
 import Stage from "./partials/Stage/Stage";
 
 function Content(props) {
+  
   const { category } = useParams();
 
   if (props.layout == "favorites") {
     return (
       <div>
         {props.layout}
-        <SportsListMenu sport={props.sport} />
+        {/* <SportsListMenu sport={props.sport} /> */}
         <FavoritesMenu sport={props.sport} favorite_tab={props.favorite_tab} />
-        <StageCards sport={props.sport} layout="favorites" />
+        <StageCards sport={props.sport} layout="favorites" favorite_tab={props.favorite_tab} />
       </div>
     );
-  } else if (props.layout == "stage") {
+  } else if (props.layout == "stage" || props.layout == "category") {
     return (
       <div>
         {props.layout}
-        <SportsListMenu sport={props.sport} />
-        <StageCards sport={props.sport} layout="stage" />
+        {/* <SportsListMenu sport={props.sport} /> */}
+        <StageCards sport={props.sport} layout={props.layout} />
       </div>
     );
   } else if (props.layout == "game") {
@@ -39,7 +40,7 @@ function Content(props) {
     return (
       <div>
         {props.layout}
-        <SportsListMenu sport={props.sport} />
+        {/* <SportsListMenu sport={props.sport} /> */}
         <Calender />
         <StageCards sport={props.sport} />
       </div>
@@ -49,7 +50,7 @@ function Content(props) {
   return (
     <div>
       {props.layout}
-      <SportsListMenu sport={props.sport} />
+      {/* <SportsListMenu sport={props.sport} /> */}
 
       <div>
         <Calender />
