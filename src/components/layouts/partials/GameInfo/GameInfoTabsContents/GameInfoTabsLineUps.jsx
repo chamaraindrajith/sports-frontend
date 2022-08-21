@@ -2,7 +2,6 @@ import React from "react";
 import "../../../../../css/soccerlineup.css";
 import  "../../../../../js/soccerlineup.js";
 
-
 function GameInfoTabsLineUps() {
   return (
     <div style={{ height: "800px" }}>
