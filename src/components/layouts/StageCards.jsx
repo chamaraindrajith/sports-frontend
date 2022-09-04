@@ -56,6 +56,18 @@ function StageCards(props) {
           <div className="box_message">There are no games available</div>
         </div>
       );
+    } else if (props.layout == "favorites" && props.favorite_tab == "matches" && (!localStorage.getItem("favorite_games") || localStorage.getItem("favorite_games") === '[]')) {
+      return (
+        <div style={{ height: "800px" }}>
+          <div className="box_message">Tap Star to add a Match to Favourites</div>
+        </div>
+      );
+    } else if (props.layout == "favorites" && props.favorite_tab == "competitions" && (!localStorage.getItem("favorite_stages") || localStorage.getItem("favorite_stages") === '[]')) {
+      return (
+        <div style={{ height: "800px" }}>
+          <div className="box_message">Tap Star to add a Competition to Favourites</div>
+        </div>
+      );
     } else {
       return (
         <div>
