@@ -41,13 +41,7 @@ function StageCards(props) {
       );
   }
 
-  if (error) {
-    return (
-      <div style={{ height: "800px" }}>
-        <div className="box_message">There are no games available</div>
-      </div>
-    );
-  } else if (!isLoaded) {
+  if (!isLoaded) {
     return (
       <div style={{ height: "800px", display: "flex", justifyContent: "center" }}>
         <div style={{ marginTop: "150px" }}>
@@ -55,14 +49,22 @@ function StageCards(props) {
         </div>
       </div>
     );
-  } else if (isLoaded) {
-    return (
-      <div>
-        {items.map((stage) => (
-          <StageCard sport={props.sport} stage_id={stage.stage_id} stage={stage} layout={props.layout} favorite_tab={props.favorite_tab} />
-        ))}
-      </div>
-    );
+  } else if (isLoaded || error) {
+    if (error || items === undefined || items === [] || items === null) {
+      return (
+        <div style={{ height: "800px" }}>
+          <div className="box_message">There are no games available</div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {items.map((stage) => (
+            <StageCard sport={props.sport} stage_id={stage.stage_id} stage={stage} layout={props.layout} favorite_tab={props.favorite_tab} />
+          ))}
+        </div>
+      );
+    }
   }
 }
 
