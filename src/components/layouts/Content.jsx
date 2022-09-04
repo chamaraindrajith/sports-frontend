@@ -15,7 +15,7 @@ function Content(props) {
   if (props.layout == "favorites") {
     return (
       <div>
-        {props.layout}
+        {/* {props.layout} */}
         {/* <SportsListMenu sport={props.sport} /> */}
         <FavoritesMenu sport={props.sport} favorite_tab={props.favorite_tab} />
         <StageCards sport={props.sport} layout="favorites" favorite_tab={props.favorite_tab} />
@@ -24,7 +24,7 @@ function Content(props) {
   } else if (props.layout == "stage" || props.layout == "category") {
     return (
       <div>
-        {props.layout}
+        {/* {props.layout} */}
         {/* <SportsListMenu sport={props.sport} /> */}
         <StageCards sport={props.sport} layout={props.layout} />
       </div>
@@ -32,14 +32,14 @@ function Content(props) {
   } else if (props.layout == "game") {
     return (
       <div>
-        {props.layout}
+        {/* {props.layout} */}
         <GameInfo sport={props.sport} />
       </div>
     );
   } else {
     return (
       <div>
-        {props.layout}
+        {/* {props.layout} */}
         {/* <SportsListMenu sport={props.sport} /> */}
         <Calender />
         <StageCards sport={props.sport} />
@@ -49,7 +49,7 @@ function Content(props) {
 
   return (
     <div>
-      {props.layout}
+      {/* {props.layout} */}
       {/* <SportsListMenu sport={props.sport} /> */}
 
       <div>

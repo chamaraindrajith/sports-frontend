@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer(props) {
   return (
     <div>
-      Test Footer
+      {/* Test Footer */}
       <div id="fixed_footer">
         <Link className="fixed_footer_link" to={"/" + props.sport} style={{ textDecoration: "none" }}>
           <img className="fixed_footer_icon" src="https://www.livescore.com/ls-web-assets/svgs/common/cricket-scores-active-2d77d8149f51f9106fc0f4024631dd20.svg" alt="" srcset="" />

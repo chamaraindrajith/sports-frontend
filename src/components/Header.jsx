@@ -16,8 +16,8 @@ function Header(props) {
   return (
     <header>
       <div className="header" id="topHeaderMenu">
-        <img onClick={handleMenu} src="\images\icons\menu-handler.png" className="d-inline-block align-top" alt="" />
-        <img src="\images\icons\scorexcard logo light.png" alt="" />
+        <img onClick={handleMenu} src="https://sports.pfplapp.com/menu-handler.png" className="d-inline-block align-top" alt="" />
+        <img src="https://sports.pfplapp.com/scorexcard%20logo%20light.png" alt="" />
         <img alt="" src="https://www.livescore.com/ls-web-assets/svgs/common/search-1e1f1087166a2eae49a82dd529b7aafd.svg" style={{ width: "14px" }}></img>
       </div>
       <Menu isMenuOpen={isMenuOpen} />
@@ -26,9 +26,9 @@ function Header(props) {
       <div className="container" id="topHeaderMenu2">
         <div className="d-flex p-2 justify-content-around align-items-center">
           <div>
-            <img src="http://localhost:3000/images/icons/menu-handler.png" width={25} onClick={handleMenu} />
+            <img src="https://sports.pfplapp.com/menu-handler.png" width={25} onClick={handleMenu} />
             <Link to="/">
-              <img className="topMenu2Logo" src="http://localhost:3000/images/icons/scorexcard%20logo%20light.png" />
+              <img className="topMenu2Logo" src="https://sports.pfplapp.com/scorexcard%20logo%20light.png" />
             </Link>
           </div>
           <Link to={"/" + props.sport} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
@@ -36,7 +36,7 @@ function Header(props) {
             <span className="topMenu2LinkText">Score</span>
           </Link>
           <Link to={"/" + props.sport + "/favorites"} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src="https://www.livescore.com/ls-web-assets/svgs/common/favorites-5b58c2e7fd0c287f9bd1fd6b23b15019.svg" width={20} />
+            <img src="https://www.livescore.com/ls-web-assets/svgs/common/favourites-5b58c2e7fd0c287f9bd1fd6b23b15019.svg" width={20} />
             <span className="topMenu2LinkText">Favorites</span>
           </Link>
           <Link to="/news" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>

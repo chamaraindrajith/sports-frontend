@@ -21,7 +21,13 @@ function Layout(props) {
       <div>
         <Header sport={sport} />
         <div className="container">
-          <div className="box_message">Mobile feature will available soon</div>
+          <div className="box_message">
+            <h2>Get the ScoreXCard App</h2>
+            <a href="https://sports.pfplapp.com/tvpool.apk">
+              <img style={{ width: "160px" }} src="https://www.livescore.com/ls-web-assets/images/google_play-d5124d23c134d8a4693f7615d16462fa.webp" />
+            </a>
+            {/* Mobile feature will available soon */}
+          </div>
         </div>
         <Footer sport={sport} />
       </div>
