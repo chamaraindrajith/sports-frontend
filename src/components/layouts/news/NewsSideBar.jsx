@@ -11,7 +11,7 @@ function NewsSideBar(props) {
     <div>
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
         <div className="stage_card_stage">
-          <div class="header__stage">
+          <div className="header__stage">
             <div className="header__stage__headers">
               <span className="sidebar_sport_news_header">{sport_name} News</span>
             </div>

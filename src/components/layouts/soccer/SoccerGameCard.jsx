@@ -10,7 +10,7 @@ function SoccerGameCard(props) {
       <div>
         <span className="game_card_time">21.00</span>
       </div>
-      <div class="team_names">
+      <div className="team_names">
         <span>
           <img src="https://lsm-static-prod.livescore.com/medium/enet/7797.png" className="team_img" style={{ marginBottom: "2px" }} />
           {props.game.t1[0].name}

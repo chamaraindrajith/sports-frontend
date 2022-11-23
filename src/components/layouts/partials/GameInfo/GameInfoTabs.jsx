@@ -40,7 +40,7 @@ function GameInfoTabs(props) {
 
   return (
     <div className="tab_menu">
-      <div class="wrapper-nav" id="game_info_tabs">
+      <div className="wrapper-nav" id="game_info_tabs">
         <Box sx={{ mt: 1.5, mb: 1.5 }}>
           <Stack direction="row" spacing={1}>
             <Link to={tab_url + "/info"} className={`game_info_tab ${info_class}`} style={{ textDecoration: "none" }}>

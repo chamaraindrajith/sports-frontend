@@ -240,7 +240,7 @@ function StageCard(props) {
                 }}
               />
             </div>
-            <div class="header__stage">
+            <div className="header__stage">
               <div className="header__stage__headers">
                 <span className="category-header__stage">{props.stage.name}</span>
                 <span className="category-header__category">{props.stage.category_name}</span>

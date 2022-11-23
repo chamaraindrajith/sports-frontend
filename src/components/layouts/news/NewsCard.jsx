@@ -5,11 +5,11 @@ function NewsSideBar(props) {
   var src = "";
 
   if (props.sport == "cricket") {
-    src = "https://sports.pfplapp.com/backend/public/data/news/images/rapid_";
+    src = "https://api.tvpool.net/data/news/images/rapid_";
   } else if (props.sport == "soccer") {
-    src = "https://sports.pfplapp.com/backend/public/data/news/images/espn_";
+    src = "https://api.tvpool.net/data/news/images/espn_";
   } else if (props.sport == "basketball") {
-    src = "https://sports.pfplapp.com/backend/public/data/news/images/espn_";
+    src = "https://api.tvpool.net/data/news/images/espn_";
   }
 
   return (

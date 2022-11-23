@@ -14,7 +14,7 @@ function ExploreMenu(props) {
   useEffect(() => {
     setIsLoaded(false);
     setError(false);
-    console.log("Location changed ExploreMenu");
+    // console.log("Location changed ExploreMenu");
     getMenuItems();
   }, [location]);
 
@@ -25,7 +25,7 @@ function ExploreMenu(props) {
       .then(
         (result) => {
           setTimeout(() => {
-            console.log(result);
+            // console.log(result);
             setMenuItems(result);
             setIsLoaded(true);
           }, 1000);
@@ -38,11 +38,11 @@ function ExploreMenu(props) {
   }
 
   return (
-    <ul class="Ch">
-      {console.log(menuitems)}
-      {menuitems.map((menuitem) => (
-        <Link to={"/" + props.sport + "/" + menuitem.slug} style={{ textDecoration: "none" }} className="menuitems">
-          <li class="Fh">
+    <ul className="Ch">
+      {/* {console.log(menuitems)} */}
+      {menuitems.map((menuitem, key) => (
+        <Link to={"/" + props.sport + "/" + menuitem.slug} style={{ textDecoration: "none" }} className="menuitems" key={key}>
+          <li className="Fh">
             <div className="ej">
               <img loading="lazy" className="flags" src={"https://static.livescore.com/i2/fh/" + menuitem.slug + ".jpg"} alt="" />
               {/* {FileSaver.saveAs("https://static.livescore.com/i2/fh/" + menuitem.slug + ".jpg", menuitem.slug + ".jpg")} */}

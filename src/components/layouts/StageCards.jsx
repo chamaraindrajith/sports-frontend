@@ -17,13 +17,13 @@ function StageCards(props) {
   useEffect(() => {
     setIsLoaded(false);
     setError(false);
-    console.log("Location changed");
+    // console.log("Location changed");
     let today = new Date().toISOString().slice(0, 10);
     getStages(today);
   }, [location]);
 
   function getStages(date) {
-    var url = "https://sports.pfplapp.com/backend/public/api/get/" + props.sport + "/date/" + date + "/json";
+    var url = "https://api.tvpool.net/api/get/" + props.sport + "/date/" + date + "/json";
     fetch(url)
       .then((res) => res.json())
       .then(
@@ -71,8 +71,8 @@ function StageCards(props) {
     } else {
       return (
         <div>
-          {items.map((stage) => (
-            <StageCard sport={props.sport} stage_id={stage.stage_id} stage={stage} layout={props.layout} favorite_tab={props.favorite_tab} />
+          {items.map((stage, key) => (
+            <StageCard sport={props.sport} stage_id={stage.stage_id} stage={stage} layout={props.layout} favorite_tab={props.favorite_tab} key={key} />
           ))}
         </div>
       );

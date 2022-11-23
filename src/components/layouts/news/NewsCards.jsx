@@ -10,7 +10,7 @@ function NewsCards(props) {
   useEffect(() => {
     setIsLoaded(false);
     setError(false);
-    console.log("NewsCards: Location changed");
+    // console.log("NewsCards: Location changed");
     let today = new Date().toISOString().slice(0, 10);
     getNews(today);
   }, [location]);
@@ -20,7 +20,7 @@ function NewsCards(props) {
   const [items, setItems] = useState([]);
 
   function getNews(date) {
-    var url = "https://sports.pfplapp.com/backend/public/api/get/news/" + props.sport + "/date/" + date + "/json";
+    var url = "https://api.tvpool.net/api/get/news/" + props.sport + "/date/" + date + "/json";
     fetch(url)
       .then((res) => res.json())
       .then(
@@ -54,8 +54,8 @@ function NewsCards(props) {
     return (
       <div>
         <Box sx={{ mt: 1.5, mb: 1.5 }}>
-          {items.map((news) => (
-            <NewsCard sport={props.sport} news={news} />
+          {items.map((news, key) => (
+            <NewsCard sport={props.sport} news={news} key={key} />
           ))}
         </Box>
       </div>
