@@ -44,7 +44,8 @@ function ExploreMenu(props) {
         <Link to={"/" + props.sport + "/" + menuitem.slug} style={{ textDecoration: "none" }} className="menuitems" key={key}>
           <li className="Fh">
             <div className="ej">
-              <img loading="lazy" className="flags" src={"https://static.livescore.com/i2/fh/" + menuitem.slug + ".jpg"} alt="" />
+              {/* <img loading="lazy" className="flags" src={"https://static.livescore.com/i2/fh/" + menuitem.slug + ".jpg"} alt="" /> */}
+              <img loading="lazy" className="flags" src={"images/flags/" + menuitem.slug + ".jpg"} alt="" />
               {/* {FileSaver.saveAs("https://static.livescore.com/i2/fh/" + menuitem.slug + ".jpg", menuitem.slug + ".jpg")} */}
               {/* {FileSaver.saveAs("https://httpbin.org/image", "image.jpg")} */}
               {}
