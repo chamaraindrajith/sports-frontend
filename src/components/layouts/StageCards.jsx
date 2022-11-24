@@ -5,9 +5,12 @@ import "./../../css/Calender.css";
 import Divider from "@mui/material/Divider";
 import CircularProgress from "@mui/material/CircularProgress";
 import StageCard from "./StageCard";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 function StageCards(props) {
+
+  var { category, stage, game_name } = useParams();
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -40,6 +43,33 @@ function StageCards(props) {
         }
       );
   }
+
+  // show There are no games available error if games not in stage or category
+  useEffect(() => {
+    if (isLoaded) {
+      var available_stage_cards_count = 0;
+      if (stage) {
+        for (let items_stage of items) {
+          if (items_stage.slug === stage) {
+            available_stage_cards_count++;
+          }
+        }
+        if (0 === available_stage_cards_count) {
+          setError(true);
+        }
+      }
+      else if (category) {
+        for (let stage of items) {
+          if (stage.category_slug === category) {
+            available_stage_cards_count++;
+          }
+        }
+        if (0 === available_stage_cards_count) {
+          setError(true);
+        }
+      }
+    }
+  })
 
   if (!isLoaded) {
     return (
