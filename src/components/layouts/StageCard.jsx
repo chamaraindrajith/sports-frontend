@@ -227,7 +227,7 @@ function StageCard(props) {
   }
 
   return (
-    <div className={"stage_card stage_card_" + props.stage.slug + " " + "stage_card_" + props.stage.category_slug} id={"stage_card_" + props.stage_id}>
+    <div className={"stage_card stage_card_" + props.stage.slug + " " + "stage_card_" + props.stage.category_slug} id={"stage_card_" + props.stage_id} key={props.stage_id}>
       <Box sx={{ mt: 1.5, mb: 1.5 }}>
         <div className="stage_card_stage_parent">
           <Link to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug} className={"stage_card_stage " + stage_card_class} style={{ textDecoration: "none" }}>
@@ -259,7 +259,7 @@ function StageCard(props) {
         </div>
 
         {props.stage.games.map((game) => (
-          <div className={"game_card " + game_card_class} id={"game_card_" + game.game_id}>
+          <div className={"game_card " + game_card_class} id={"game_card_" + game.game_id} key={game.game_id}>
             <Link
               to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug + "/" + game.game_id + "/" + game.game_id}
               className="sport_chips_links"
