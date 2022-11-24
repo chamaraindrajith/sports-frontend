@@ -11,7 +11,7 @@ function Footer(props) {
           <span className="fixed_footer_link_text">Scores</span>
         </Link>
         <Link className="fixed_footer_link" to={"/" + props.sport + "/favorites"} style={{ textDecoration: "none" }}>
-          <img className="fixed_footer_icon" src="https://www.livescore.com/ls-web-assets/svgs/common/favorites-5b58c2e7fd0c287f9bd1fd6b23b15019.svg" alt="" srcSet="" />
+          <img className="fixed_footer_icon" src="https://www.livescore.com/ls-web-assets/svgs/common/favourites-5b58c2e7fd0c287f9bd1fd6b23b15019.svg" alt="" srcSet="" />
           <span className="fixed_footer_link_text">Favorites</span>
         </Link>
         <Link className="fixed_footer_link" to="/news" style={{ textDecoration: "none" }}>

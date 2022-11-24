@@ -1,18 +1,61 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import ExploreMenu from "./layouts/ExploreMenu";
 import Content from "./layouts/Content";
 import NewsSideBar from "./layouts/news/NewsSideBar";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, Redirect, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import SportsListMenu from "./layouts/SportsListMenu";
 
 function Layout(props) {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    getStageName(stage);
+    getCategoryName(category);
+  }, [location]);
+
   var { sport, category, stage, game_name, game_id, tab } = useParams();
   if (sport == undefined) {
     sport = "cricket"; // default sport
   } else if (sport != "cricket" && sport != "basketball" && sport != "soccer") {
     sport = "cricket"; // default sport
+  }
+
+  const [category_name, setCategoryName] = useState("");
+  const [stage_name, setStageName] = useState("");
+
+  // getCategoryName
+  function getCategoryName(category_slug) {
+    var url = "https://api.tvpool.net/api/get/category/name?slug=" + category_slug;
+    fetch(url)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          result.length > 0 ? setCategoryName(result) : console.log("404");
+        },
+        (error) => {
+
+        }
+      );
+  }
+
+  // getStageName
+  function getStageName(stage_slug) {
+    var url = "https://api.tvpool.net/api/get/stage/name?slug=" + stage_slug;
+    fetch(url)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          result.length > 0 ? setStageName(result): console.log("404");
+        },
+        (error) => {
+
+        }
+      );
   }
 
   if (props.layout == "mobile") {
@@ -114,7 +157,7 @@ function Layout(props) {
               <div className="row">
                 <div className="col-md-4 col" id="menuItemNameDiv">
                   <div className="container-left flex-column border_box">
-                    <ExploreMenu sport={sport} />
+                    <ExploreMenu sport={sport} category={category} stage={stage} category_name={category_name} stage_name={stage_name} />
                   </div>
                 </div>
                 <div className="col-md-8 col" id="content_div">
