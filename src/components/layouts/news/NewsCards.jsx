@@ -35,7 +35,7 @@ function NewsCards(props) {
         }
       );
   }
-
+ 
   if (error) {
     return (
       <div style={{ height: "800px" }}>
