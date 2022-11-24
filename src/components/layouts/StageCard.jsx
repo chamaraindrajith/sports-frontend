@@ -232,8 +232,10 @@ function StageCard(props) {
         <div className="stage_card_stage_parent">
           <Link to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug} className={"stage_card_stage " + stage_card_class} style={{ textDecoration: "none" }}>
             <div>
-              <img
-                src="https://static.livescore.com/i2/fh/xcr-intl-test.jpg"
+              <img 
+                src={"/images/flags/" + props.stage.category_slug + ".jpg"}
+                alt=""
+                loading="lazy"
                 style={{
                   width: "25px",
                   marginRight: "13px",
