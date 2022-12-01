@@ -59,10 +59,14 @@ function StageCards(props) {
         }
       }
       else if (category) {
-        for (let stage of items) {
-          if (stage.category_slug === category) {
-            available_stage_cards_count++;
+        if (items) {
+          for (let stage of items) {
+            if (stage.category_slug === category) {
+              available_stage_cards_count++;
+            }
           }
+        } else {
+          setError(true);
         }
         if (0 === available_stage_cards_count) {
           setError(true);
