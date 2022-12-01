@@ -26,33 +26,33 @@ function StageCard(props) {
       setFavoriteStages(fav_stages);
     }
 
-    if (props.layout == "favorites" && props.favorite_tab == "matches") {
+    if (props.layout === "favorites" && props.favorite_tab === "matches") {
       listFavorites();
-    } else if (props.layout == "favorites" && props.favorite_tab == "competitions") {
+    } else if (props.layout === "favorites" && props.favorite_tab === "competitions") {
       setStageCardClass('stage_card_favorites_competitions');
       setGameCardClass('game_card_favorites_competitions');
       listStageFavorites();
     }
 
-    if (props.layout == "stage") {
+    if (props.layout === "stage") {
       listStage();
     }
 
-    if (props.layout == "category") {
+    if (props.layout === "category") {
       listCategory();
     }
   }, []);
 
   // show active stars
   favorite_games.map((favorite_game) => {
-    if (favorite_game.sport == props.sport) {
+    if (favorite_game.sport === props.sport) {
       starActive(favorite_game.game_id);
     }
   });
 
   // show active stars stage
   favorite_stages.map((favorite_stage) => {
-    if (favorite_stage.sport == props.sport) {
+    if (favorite_stage.sport === props.sport) {
       stageStarActive(favorite_stage.stage_id);
     }
   });
@@ -113,14 +113,14 @@ function StageCard(props) {
       localStorage["favorite_games"] = JSON.stringify(game_ids);
     }
     var favorite_games = JSON.parse(localStorage.getItem("favorite_games"));
-    if (status == 1) {
+    if (status === 1) {
       starActive(game_id);
       favorite_games.push({ game_id: game_id.toString(), sport: props.sport, stage_id: props.stage_id.toString() });
       localStorage["favorite_games"] = JSON.stringify(favorite_games);
-    } else if (status == 0) {
+    } else if (status === 0) {
       starInactive(game_id);
 
-      favorite_games = favorite_games.filter((favorite_games) => favorite_games.game_id != game_id.toString());
+      favorite_games = favorite_games.filter((favorite_games) => favorite_games.game_id !== game_id.toString());
       localStorage["favorite_games"] = JSON.stringify(favorite_games);
     }
   }
@@ -134,14 +134,14 @@ function StageCard(props) {
       localStorage["favorite_stages"] = JSON.stringify(stage_ids);
     }
     var favorite_stages = JSON.parse(localStorage.getItem("favorite_stages"));
-    if (status == 1) {
+    if (status === 1) {
       stageStarActive(stage_id);
-      favorite_stages.push({ stage_id: stage_id.toString(), sport: props.sport, stage_id: props.stage_id.toString() });
+      favorite_stages.push({ stage_id: stage_id.toString(), sport: props.sport });
       localStorage["favorite_stages"] = JSON.stringify(favorite_stages);
-    } else if (status == 0) {
+    } else if (status === 0) {
       stageStarInactive(stage_id);
 
-      favorite_stages = favorite_stages.filter((favorite_stages) => favorite_stages.stage_id != stage_id.toString());
+      favorite_stages = favorite_stages.filter((favorite_stages) => favorite_stages.stage_id !== stage_id.toString());
       localStorage["favorite_stages"] = JSON.stringify(favorite_stages);
     }
   }
@@ -233,7 +233,7 @@ function StageCard(props) {
           <Link to={"/" + props.sport + "/" + props.stage.category_slug + "/" + props.stage.slug} className={"stage_card_stage " + stage_card_class} style={{ textDecoration: "none" }}>
             <div>
               <img 
-                src={"/images/flags/" + props.stage.category_slug + ".jpg"}
+                src={"https://api.tvpool.net/images/flags/" + props.stage.category_slug + ".jpg"}
                 alt=""
                 loading="lazy"
                 style={{
