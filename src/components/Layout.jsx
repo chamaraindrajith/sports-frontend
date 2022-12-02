@@ -26,6 +26,10 @@ function Layout(props) {
   const [category_name, setCategoryName] = useState("");
   const [stage_name, setStageName] = useState("");
 
+  function emptyFunction() {
+    return undefined;
+  }  
+  
   // getCategoryName
   function getCategoryName(category_slug) {
     var url = "https://api.tvpool.net/api/get/category/name?slug=" + category_slug;
@@ -34,7 +38,7 @@ function Layout(props) {
       .then(
         (result) => {
           // console.log(result);
-          result.length > 0 ? setCategoryName(result) : console.log("404");
+          result.length > 0 ? setCategoryName(result) : emptyFunction();
         },
         (error) => {
 
@@ -50,7 +54,7 @@ function Layout(props) {
       .then(
         (result) => {
           // console.log(result);
-          result.length > 0 ? setStageName(result): console.log("404");
+          result.length > 0 ? setStageName(result): emptyFunction();
         },
         (error) => {
 
