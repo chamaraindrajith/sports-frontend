@@ -28,38 +28,42 @@ function Layout(props) {
 
   function emptyFunction() {
     return undefined;
-  }  
-  
+  }
+
   // getCategoryName
   function getCategoryName(category_slug) {
-    var url = "https://api.tvpool.net/api/get/category/name?slug=" + category_slug;
-    fetch(url)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          // console.log(result);
-          result.length > 0 ? setCategoryName(result) : emptyFunction();
-        },
-        (error) => {
+    if (category_slug) {
+      var url = "https://api.tvpool.net/api/get/category/name?slug=" + category_slug;
+      fetch(url)
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            // console.log(result);
+            result.length > 0 ? setCategoryName(result) : emptyFunction();
+          },
+          (error) => {
 
-        }
-      );
+          }
+        );
+    }
   }
 
   // getStageName
   function getStageName(stage_slug) {
-    var url = "https://api.tvpool.net/api/get/stage/name?slug=" + stage_slug;
-    fetch(url)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          // console.log(result);
-          result.length > 0 ? setStageName(result): emptyFunction();
-        },
-        (error) => {
+    if (stage_slug) {
+      var url = "https://api.tvpool.net/api/get/stage/name?slug=" + stage_slug;
+      fetch(url)
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            // console.log(result);
+            result.length > 0 ? setStageName(result) : emptyFunction();
+          },
+          (error) => {
 
-        }
-      );
+          }
+        );
+    }
   }
 
   if (props.layout == "mobile") {
