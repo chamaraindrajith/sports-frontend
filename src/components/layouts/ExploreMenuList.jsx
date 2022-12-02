@@ -20,7 +20,7 @@ function ExploreMenuList(props) {
               {/*  <Link to={"/" + props.sport + "/" + menuitem.slug} style={{ textDecoration: "none" }} className="menuitems" key={key}> */}
               <li className="Fh">
                 <div className="ej">
-                  <img loading="lazy" className="flags" src={"/images/flags/" + menuitem.image + ".jpg"} alt="" />
+                  <img loading="lazy" className="flags" src={"https://api.tvpool.net/images/flags/" + menuitem.image + ".jpg"} alt="" />
                 </div>
                 <span className={"menuItemName " + (menuitem.slug === props.stage ? " active" : "")}>
                   {menuitem.name}

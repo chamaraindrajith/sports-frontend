@@ -102,7 +102,7 @@ function ExploreMenu(props) {
 
           <ExploreMenuList menuitems={menuitems} input={inputText} />
 
-          {console.log(menuitems)}
+          {/* {console.log(menuitems)} */}
 
           {/* {menuitems.map((menuitem, key) => (
             <Link to={"/" + menuitem.url} style={{ textDecoration: "none" }} className="menuitems" key={key}>
