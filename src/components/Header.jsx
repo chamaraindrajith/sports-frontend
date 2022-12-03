@@ -13,6 +13,8 @@ function Header(props) {
     setMenu((prevState) => !prevState);
   };
 
+  console.log(props.layout);
+
   return (
     <header>
       <div className="header" id="topHeaderMenu">
@@ -32,24 +34,24 @@ function Header(props) {
             </Link>
           </div>
           <Link to={"/" + props.sport} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src={"https://api.tvpool.net/images/common/" + props.sport + "-scores-" + "active" + ".svg"} width={20} />
-            <span className="topMenu2LinkText">Score</span>
+            <img src={"https://api.tvpool.net/images/common/" + props.sport + "-scores" + ((props.layout === "stages") ? "-active" : "") + ".svg"} width={20} />
+            <span className={"topMenu2LinkText" + ((props.layout === "stages") ? " active" : "")}>Score</span>
           </Link>
           <Link to={"/" + props.sport + "/favorites/matches"} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src="https://api.tvpool.net/images/common/favourites.svg" width={20} />
-            <span className="topMenu2LinkText">Favorites</span>
+            <img src={"https://api.tvpool.net/images/common/favourites" + ((props.layout === "favorites") ? "-active" : "") + ".svg"} width={20} />
+            <span className={"topMenu2LinkText" + ((props.layout === "favorites") ? " active" : "")}>Favorites</span>
           </Link>
           <Link to="/news" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src="https://api.tvpool.net/images/common/news-article.svg" width={20} />
-            <span className="topMenu2LinkText">News</span>
+            <img src={"https://api.tvpool.net/images/common/news-article" + ((props.layout === "news") ? "-active" : "") + ".svg"} width={20} />
+            <span className={"topMenu2LinkText" + ((props.layout === "news") ? " active" : "")}>News</span>
           </Link>
           <Link to="/fan-club" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src="https://api.tvpool.net/images/common/news-article.svg" width={20} />
-            <span className="topMenu2LinkText">Fan Club</span>
+            <img src={"https://api.tvpool.net/images/common/news-article" + ((props.layout === "fan-club") ? "-active" : "") + ".svg"} width={20} />
+            <span className={"topMenu2LinkText" + ((props.layout === "fan-club") ? " active" : "")}>Fan Club</span>
           </Link>
           <Link to="/mobile" className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src="https://api.tvpool.net/images/common/download.svg" width={20} />
-            <span className="topMenu2LinkText">Get the app</span>
+            <img src={"https://api.tvpool.net/images/common/download" + ((props.layout === "mobile") ? "-active" : "")  + ".svg"} width={20} />
+            <span className={"topMenu2LinkText" + ((props.layout === "mobile") ? " active" : "")}>Get the app</span>
           </Link>
         </div>
         <Divider variant="middle" />

@@ -188,3 +188,7 @@
   z-index: 20;
   background: #ff6b00;
 }
+
+.topMenu2LinkText.active, .fixed_footer_link_text.active {
+  color: #ff6b00;
+}

@@ -70,7 +70,7 @@ function Layout(props) {
     // full
     return (
       <div>
-        <Header sport={sport} />
+        <Header sport={sport} layout={props.layout} />
         <div className="container">
           <div className="box_message">
             <h2>Get the ScoreXCard App</h2>
@@ -80,7 +80,7 @@ function Layout(props) {
             {/* Mobile feature will available soon */}
           </div>
         </div>
-        <Footer sport={sport} />
+        <Footer sport={sport} layout={props.layout} />
       </div>
     );
   } else if (props.layout == "privacy") {
@@ -135,29 +135,29 @@ function Layout(props) {
     // redirect
     return (
       <div>
-        <Header sport={sport} />
+        <Header sport={sport} layout={props.layout} />
         <div className="container">
           <div className="box_message">News feature will available soon</div>
         </div>
-        <Footer sport={sport} />
+        <Footer sport={sport} layout={props.layout} />
       </div>
     );
   } else if (props.layout == "fan-club") {
     // not sure
     return (
       <div>
-        <Header sport={sport} />
+        <Header sport={sport} layout={props.layout} />
         <div className="container">
           <div className="box_message">Fan Club feature will available soon</div>
         </div>
-        <Footer sport={sport} />
+        <Footer sport={sport} layout={props.layout} />
       </div>
     );
   } else {
     return (
       <div>
         {/* {props.layout} */}
-        <Header sport={sport} />
+        <Header sport={sport} layout={props.layout} />
         <div className="container">
           <div className="row">
             <div className="col-md-8 col">
@@ -199,7 +199,7 @@ function Layout(props) {
             </div> */}
           </div>
         </div>
-        <Footer sport={sport} />
+        <Footer sport={sport} layout={props.layout} />
       </div>
     );
   }
