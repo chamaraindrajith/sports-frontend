@@ -7,7 +7,7 @@ function Calender() {
     <div id="match-rows_calendar">
       <div>
         <img
-          src="https://www.livescore.com/ls-web-assets/svgs/common/live-9cc2fb1af6dcface698283d0ec166775.svg"
+          src="https://api.tvpool.net/images/common/live.svg"
           style={{
             minHeight: "100%",
             width: "30px",
@@ -37,7 +37,7 @@ function Calender() {
         </div>
       </div>
       <img
-        src="https://www.livescore.com/ls-web-assets/svgs/common/calendar-62a86ad26c51fe49ea1c6abb202a15b4.svg"
+        src="https://api.tvpool.net/images/common/calendar.svg"
         style={{
           minHeight: "100%",
           width: "25px",
