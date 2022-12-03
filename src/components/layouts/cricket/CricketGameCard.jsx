@@ -9,7 +9,7 @@ function CricketGameCard(props) {
     <Box sx={{ mt: 0.75, mb: 0.75 }} style={{ display: "flex" }} className="gameCard cricketGameCard" id={"gameCard_" + props.game.game_id} >
       <div className="cricket_details">
         <div className="match_row_cricket_phase">
-          <span>{props.game.cricket_phase + ' (' + props.game.cricket_phase_info + ')'}</span>
+          <span>{((props.game.cricket_phase) ? props.game.cricket_phase : "") + ((props.game.cricket_phase_info) ? " (" + props.game.cricket_phase_info + ")" : "")}</span>
           <span>{props.game.start_date} - {props.game.end_date}</span>
         </div>
         <div className={"match_row_live_time " + ((props.game.status === 1) ? "in_progress" : "")}> 
@@ -20,14 +20,14 @@ function CricketGameCard(props) {
             <img src="https://lsm-static-prod.livescore.com/medium/enet/7797.png" className="ball_bat" style={{ marginBottom: "2px" }} />
             {props.game.t1[0].name}
           </span>
-          <span className="cricket_score">{ props.game.score[0].t1i1r + '/' + props.game.score[0].t1i1w + ' & ' + props.game.score[0].t1i2r + '/' + props.game.score[0].t1i2w }</span>
+          <span className="cricket_score">{ ((props.game.score[0].t1i1r || props.game.score[0].t1i1w) ? props.game.score[0].t1i1r + ((props.game.score[0].t1i1w !== 10) ? '/' + props.game.score[0].t1i1w : "") : "" ) + ((props.game.score[0].t1i1d === 1) ? "d" : "") + ((props.game.score[0].t1i2r || props.game.score[0].t1i2w) ? ' & ' + props.game.score[0].t1i2r + ((props.game.score[0].t1i2w !== 10) ? '/' + props.game.score[0].t1i2w : "") : "") + ((props.game.score[0].t1i2d === 1) ? "d" : "")}</span>
         </span>
         <span className="name_with_score">
           <span>
             <img src="https://lsm-static-prod.livescore.com/medium/enet/7797.png" className="ball_bat" />
             {props.game.t2[0].name}
           </span>
-          <span className="cricket_score">{ props.game.score[0].t2i1r + '/' + props.game.score[0].t2i1w + ' & ' + props.game.score[0].t2i2r + '/' + props.game.score[0].t2i2w }</span>
+          <span className="cricket_score">{ ((props.game.score[0].t2i1r || props.game.score[0].t2i1w) ? props.game.score[0].t2i1r + ((props.game.score[0].t2i1w !== 10) ? '/' + props.game.score[0].t2i1w : "") : "" ) + ((props.game.score[0].t2i1d === 1) ? "d" : "") + ((props.game.score[0].t2i2r || props.game.score[0].t2i2w) ? ' & ' + props.game.score[0].t2i2r + ((props.game.score[0].t2i2w !== 10) ? '/' + props.game.score[0].t2i2w : "") : "") + ((props.game.score[0].t2i2d === 1) ? "d" : "")}</span>
         </span>
         <div className="match_row_cricket_phase">
           <span>{props.game.live_status_comment}</span>
