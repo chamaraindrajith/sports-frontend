@@ -7,12 +7,18 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 function NewsCards(props) {
   const location = useLocation();
+  const [currentSport, setCurrentSport] = useState(null);
   useEffect(() => {
-    setIsLoaded(false);
-    setError(false);
     // console.log("NewsCards: Location changed");
     let today = new Date().toISOString().slice(0, 10);
-    getNews(today);
+    console.log(props.sport)
+    console.log(currentSport)
+    if (props.sport !== currentSport) {
+      setIsLoaded(false);
+      setError(false);
+      getNews(today);
+    }
+    setCurrentSport(props.sport);
   }, [location]);
 
   const [error, setError] = useState(null);
@@ -35,7 +41,7 @@ function NewsCards(props) {
         }
       );
   }
- 
+
   if (error) {
     return (
       <div style={{ height: "800px" }}>
