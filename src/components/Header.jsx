@@ -35,7 +35,7 @@ function Header(props) {
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/cricket-scores-active-2d77d8149f51f9106fc0f4024631dd20.svg" width={20} />
             <span className="topMenu2LinkText">Score</span>
           </Link>
-          <Link to={"/" + props.sport + "/favorites"} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
+          <Link to={"/" + props.sport + "/favorites/matches"} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
             <img src="https://www.livescore.com/ls-web-assets/svgs/common/favourites-5b58c2e7fd0c287f9bd1fd6b23b15019.svg" width={20} />
             <span className="topMenu2LinkText">Favorites</span>
           </Link>
