@@ -5,6 +5,8 @@
 }
 .match_row_live_time span {
   font-size: 9px;
+}
+.match_row_live_time.in_progress span {
   color: #ff6b00;
 }
 .ball_bat {

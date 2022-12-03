@@ -12,7 +12,7 @@ function CricketGameCard(props) {
           <span>{props.game.cricket_phase + ' (' + props.game.cricket_phase_info + ')'}</span>
           <span>{props.game.start_date} - {props.game.end_date}</span>
         </div>
-        <div className="match_row_live_time">
+        <div className={"match_row_live_time " + ((props.game.status === 1) ? "in_progress" : "")}> 
           <span>{props.game.live_time}</span>
         </div>
         <span className="name_with_score">
