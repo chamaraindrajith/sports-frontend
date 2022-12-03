@@ -12,11 +12,11 @@ function SoccerGameCard(props) {
       </div>
       <div className="team_names">
         <span>
-          <img src={"https://lsm-static-prod.livescore.com/medium/" + props.game.t1[0].image} className="team_img" style={{ marginBottom: "2px" }} />
+          <img src={"https://api.tvpool.net/images/teams/" + props.game.t1[0].image} className="team_img" style={{ marginBottom: "2px" }} />
           {props.game.t1[0].name}
         </span>
         <span>
-          <img src={"https://lsm-static-prod.livescore.com/medium/" + props.game.t2[0].image} className="team_img" />
+          <img src={"https://api.tvpool.net/images/teams/" + props.game.t2[0].image} className="team_img" />
           {props.game.t2[0].name}
         </span>
       </div>
