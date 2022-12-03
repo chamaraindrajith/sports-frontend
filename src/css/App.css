@@ -175,3 +175,16 @@
 .search:focus {
   border: none;
 }
+
+.game_card.in_progress:before {
+  border-radius: 0 7.5px 7.5px 0;
+  content: "";
+  display: block;
+  height: calc(100% - 20px);
+  left: 0px;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+  z-index: 20;
+  background: #ff6b00;
+}
