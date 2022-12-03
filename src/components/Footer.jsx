@@ -7,7 +7,7 @@ function Footer(props) {
       {/* Test Footer */}
       <div id="fixed_footer">
         <Link className="fixed_footer_link" to={"/" + props.sport} style={{ textDecoration: "none" }}>
-          <img className="fixed_footer_icon" src="https://api.tvpool.net/images/common/cricket-scores-active.svg" alt="" srcSet="" />
+          <img className="fixed_footer_icon" src={"https://api.tvpool.net/images/common/" + props.sport + "-scores-" + "active" + ".svg"} alt="" srcSet="" />
           <span className="fixed_footer_link_text">Scores</span>
         </Link>
         <Link className="fixed_footer_link" to={"/" + props.sport + "/favorites"} style={{ textDecoration: "none" }}>
