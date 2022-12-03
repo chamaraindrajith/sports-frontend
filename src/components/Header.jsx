@@ -32,7 +32,7 @@ function Header(props) {
             </Link>
           </div>
           <Link to={"/" + props.sport} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>
-            <img src="https://api.tvpool.net/images/common/cricket-scores-active.svg" width={20} />
+            <img src={"https://api.tvpool.net/images/common/" + props.sport + "-scores-" + "active" + ".svg"} width={20} />
             <span className="topMenu2LinkText">Score</span>
           </Link>
           <Link to={"/" + props.sport + "/favorites/matches"} className="d-flex p-2 center align-items-center" style={{ textDecoration: "none" }}>

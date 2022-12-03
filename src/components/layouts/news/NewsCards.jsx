@@ -11,8 +11,6 @@ function NewsCards(props) {
   useEffect(() => {
     // console.log("NewsCards: Location changed");
     let today = new Date().toISOString().slice(0, 10);
-    console.log(props.sport)
-    console.log(currentSport)
     if (props.sport !== currentSport) {
       setIsLoaded(false);
       setError(false);
