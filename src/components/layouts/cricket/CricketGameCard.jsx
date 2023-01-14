@@ -4,13 +4,28 @@ import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import "./../../../css/GameCard.css";
 import "./../../../css/CricketGameCard.css";
 
+function dateFormatter(start_date, end_date) {
+  let start = new Date(start_date);
+  let end = new Date(end_date);
+
+  let start_formatted = start.toUTCString().substring(5, 11);
+  let end_formatted = end.toUTCString().substring(5, 11);
+
+  if (start_formatted === end_formatted) {
+    return start_formatted;
+  } else {
+    return start_formatted + " - " + end_formatted;
+  }
+}
+
 function CricketGameCard(props) {
+
   return (
     <Box sx={{ mt: 0.75, mb: 0.75 }} style={{ display: "flex" }} className="gameCard cricketGameCard" id={"gameCard_" + props.game.game_id} >
       <div className="cricket_details">
         <div className="match_row_cricket_phase">
           <span>{((props.game.cricket_phase) ? props.game.cricket_phase : "") + ((props.game.cricket_phase_info) ? " (" + props.game.cricket_phase_info + ")" : "")}</span>
-          <span>{props.game.start_date} - {props.game.end_date}</span>
+          <span>{dateFormatter(props.game.start_date, props.game.end_date)}</span>
         </div>
         <div className={"match_row_live_time " + ((props.game.status === 1) ? "in_progress" : "")}>
           <span>{props.game.live_time}</span>
