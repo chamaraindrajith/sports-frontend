@@ -1,0 +1,59 @@
+ tr td{
+
+    font-size: 11px !important;
+    
+}
+
+tr {
+    line-height: 10px !important;
+}
+th,td{
+    text-align: left !important;
+}
+
+.custom-card
+{
+    background-color:rgb(24, 24, 24);
+    align-items: left;
+    font-size: 12px;
+    padding: 8px,4px,8px,10px;
+    margin:0px,10px,10px;
+    border-radius: 7.5px;
+    border:1px solid #666666;
+}
+
+
+.custom-table .table-head th
+{
+    
+    border: none;
+    font-size: 11px;
+    text-align: left;
+
+}
+.custom-table  tbody
+{
+    
+    border-radius: 7.5px ;
+    margin-top: 5px;
+    
+}
+
+.custom-table .table-body tr
+{
+    border-bottom: 1px solid rgb(99, 97, 97);
+    
+   
+}
+
+
+.pr
+{
+    font-size: 11px;
+}
+
+.pr .player-status{
+
+    font-size: 10px;
+    color: rgb(97, 97, 97);
+}

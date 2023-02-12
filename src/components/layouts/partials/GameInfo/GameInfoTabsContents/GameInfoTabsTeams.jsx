@@ -1,10 +1,13 @@
 import React from "react";
+import CricketTeams from "../../../cricket/CricketTeams";
 
 function GameInfoTabsTeams() {
   return (
-    <div style={{ height: "800px" }}>
-      <div className="box_message">Teams feature will available soon</div>
-    </div>
+    
+      
+        <CricketTeams/>
+      
+    
   );
 }
 

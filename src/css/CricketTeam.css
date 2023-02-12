@@ -1,0 +1,14 @@
+.team-card{
+
+    border: 1px solid #666666;
+    border-radius: 7.5px;
+}
+
+.players{
+    border-bottom: 1px solid #222;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 11px;
+}

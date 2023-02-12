@@ -1,10 +1,9 @@
 import React from "react";
+import CricketInfo from "../../../cricket/CricketInfo";
 
-function GameInfoTabsInfo() {
+function GameInfoTabsInfo(props) {
   return (
-    <div style={{ height: "800px" }}>
-      <div className="box_message">Info feature will available soon</div>
-    </div>
+    <CricketInfo />
   );
 }
 
